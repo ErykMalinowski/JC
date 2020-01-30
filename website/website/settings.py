@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapp',
+    'webpack_loader',
 ]
 
 MIDDLEWARE = [
@@ -100,6 +101,19 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Webpack
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'CACHE': not DEBUG,
+        'BUNDLE_DIR_NAME': 'webpack_bundles/', # must end with slash
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+        'POLL_INTERVAL': 0.1,
+        'TIMEOUT': None,
+        'IGNORE': ['.+\.hot-update.js', '.+\.map']
+    }
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
@@ -118,4 +132,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+PUBLIC_DIR = os.path.join(BASE_DIR, 'public')
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(PUBLIC_DIR, 'static')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(PUBLIC_DIR, 'media')
