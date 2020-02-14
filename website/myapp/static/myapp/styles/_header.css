@@ -1,4 +1,27 @@
-header {
-    /* font-family: 'Aldrich', sans-serif; */
-    /* background-color: rgba(0, 0, 0, .6); */
+.page-header {
+    background-color: rgba(0, 0, 0, .6);
+    margin-top: 100px;
+    padding: 10px 0;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-logo {
+    font-family: 'Aldrich', sans-serif;
+    font-size: 6rem;
+    padding-top: 10px;
+}
+
+.page-navigation__items {
+    display: flex;
+}
+
+.page-navigation__link {
+    font-size: 1.6rem;
+    padding: 15px 20px;
+    letter-spacing: 1px;
 }
