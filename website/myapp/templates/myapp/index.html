@@ -16,37 +16,68 @@
         <source src="{% static 'myapp/videos/background.mp4' %}" type="video/mp4">
     </video>
     <header class="page-header">
-        <a href="" class="page-logo">JC</a>
-        <nav class="page-navigation">
-            <ul class="page-navigation__items">
-                <li class="page-navigation__item"><a href="" class="page-navigation__link">STRONA GŁÓWNA</a></li>
-                <li class="page-navigation__item"><a href="" class="page-navigation__link">TABELA</a></li>
-                <li class="page-navigation__item"><a href="" class="page-navigation__link">MECZE</a></li>
-                <li class="page-navigation__item"><a href="" class="page-navigation__link">STATYSTYKI</a></li>
-            </ul>
-        </nav>
+        <div class="wrapper">
+            <a href="" class="page-logo">JC</a>
+            <nav class="page-navigation">
+                <ul class="page-navigation__items">
+                    <li class="page-navigation__item"><a href="" class="page-navigation__link">STRONA GŁÓWNA</a></li>
+                    <li class="page-navigation__item"><a href="" class="page-navigation__link">TABELA</a></li>
+                    <li class="page-navigation__item"><a href="" class="page-navigation__link">MECZE</a></li>
+                    <li class="page-navigation__item"><a href="" class="page-navigation__link">STATYSTYKI</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main class="page-content">
         <div class="wrapper">
             {% block content %}
-            <!-- nazwać sekcję i ogarnąć strukturę -->
-            <section>
-                <ul>
-                    <li>Herb 1 Herb 2 Drużyna 1 Drużyna 2 Gole 1 Gole 2</li>
-                    <li>Herb 1 Herb 2 Drużyna 1 Drużyna 2 Gole 1 Gole 2</li>
-                    <li>Herb 1 Herb 2 Drużyna 1 Drużyna 2 Gole 1 Gole 2</li>
-                    <li>Herb 1 Herb 2 Drużyna 1 Drużyna 2 Gole 1 Gole 2</li>
-                    <li>Herb 1 Herb 2 Drużyna 1 Drużyna 2 Gole 1 Gole 2</li>
-                    <li>Herb 1 Herb 2 Drużyna 1 Drużyna 2 Gole 1 Gole 2</li>
+            <section class="content-section">
+                <ul class="matches">
+                    <li class="matches__item">
+                        <div class="team"><img src="{% static 'myapp/images/logo1.jpg' %}" class="team__img"><span
+                                class="team__name">Drużyna 1</span><span class="team__score">Gole 1</span></div>
+                        <div class="team"><img src="{% static 'myapp/images/logo2.jpg' %}" class="team__img"><span
+                                class="team__name">Drużyna 2</span><span class="team__score">Gole 2</span></div>
+                    </li>
+                    <li class="matches__item">
+                        <div class="team"><img src="{% static 'myapp/images/logo1.jpg' %}" class="team__img"><span
+                                class="team__name">Drużyna 1</span><span class="team__score">Gole 1</span></div>
+                        <div class="team"><img src="{% static 'myapp/images/logo2.jpg' %}" class="team__img"><span
+                                class="team__name">Drużyna 2</span><span class="team__score">Gole 2</span></div>
+                    </li>
+                    <li class="matches__item">
+                        <div class="team"><img src="{% static 'myapp/images/logo1.jpg' %}" class="team__img"><span
+                                class="team__name">Drużyna 1</span><span class="team__score">Gole 1</span></div>
+                        <div class="team"><img src="{% static 'myapp/images/logo2.jpg' %}" class="team__img"><span
+                                class="team__name">Drużyna 2</span><span class="team__score">Gole 2</span></div>
+                    </li>
+                    <li class="matches__item">
+                        <div class="team"><img src="{% static 'myapp/images/logo1.jpg' %}" class="team__img"><span
+                                class="team__name">Drużyna 1</span><span class="team__score">Gole 1</span></div>
+                        <div class="team"><img src="{% static 'myapp/images/logo2.jpg' %}" class="team__img"><span
+                                class="team__name">Drużyna 2</span><span class="team__score">Gole 2</span></div>
+                    </li>
+                    <li class="matches__item">
+                        <div class="team"><img src="{% static 'myapp/images/logo1.jpg' %}" class="team__img"><span
+                                class="team__name">Drużyna 1</span><span class="team__score">Gole 1</span></div>
+                        <div class="team"><img src="{% static 'myapp/images/logo2.jpg' %}" class="team__img"><span
+                                class="team__name">Drużyna 2</span><span class="team__score">Gole 2</span></div>
+                    </li>
+                    <li class="matches__item">
+                        <div class="team"><img src="{% static 'myapp/images/logo1.jpg' %}" class="team__img"><span
+                                class="team__name">Drużyna 1</span><span class="team__score">Gole 1</span></div>
+                        <div class="team"><img src="{% static 'myapp/images/logo2.jpg' %}" class="team__img"><span
+                                class="team__name">Drużyna 2</span><span class="team__score">Gole 2</span></div>
+                    </li>
                 </ul>
             </section>
-            <h1 class="content-header">AKTUALNOŚCI</h1>
+            <h1 class="content-title">AKTUALNOŚCI</h1>
             <article class="content-article">
                 <h2 class="content-article__header">Jutrzenka Cegłów - Watra Mrozy 3:0 (2:0)</h2>
                 <p class="content-article__info">BRAMKI: Malinowski x3 (asysty Rutkowski, Branicki, Filipiec)</p>
                 <p class="content-article__squad">SKŁAD: Zawadka - Sikorski, Lisiecki, Walas, Kowalczyk - Rutkowski,
                     Wąsowski,
-                    Piątkowski, Filipiec - Malinowski, Branicki</p class="content-article__header">
+                    Piątkowski, Filipiec - Malinowski, Branicki</p>
                 <p class="content-article__description">OPIS: Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Laudantium
                     dignissimos quisquam, et
@@ -72,7 +103,9 @@
         </div>
     </main>
     <footer class="page-footer">
-        <p>&copy; 2020 Eryk Malinowski</p>
+        <div class="wrapper">
+            <p>&copy; 2020 Eryk Malinowski</p>
+        </div>
     </footer>
 </body>
 

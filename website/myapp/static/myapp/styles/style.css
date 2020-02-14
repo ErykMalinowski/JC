@@ -1,45 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Aldrich|IBM+Plex+Mono:400,700&display=swap&subset=latin-ext');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'IBM Plex Mono', monospace;
-    color: white;
-}
-
-ul {
-    list-style-type: none;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-video {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    transform: translate(-50%, -50%);
-    filter: brightness(50%);
-}
-
-.wrapper {
-    max-width: 1200px;
-    padding: 0 30px;
-    margin: 0 auto;
-}
-
-header {
-    /* font-family: 'Aldrich', sans-serif; */
-    /* background-color: rgba(0, 0, 0, .6); */
-}
+@import "./_base.css";
+@import "./_header.css";
+@import "./_footer.css";
+@import "./_home.css";
+@import "./_matches.css";
+@import "./_stats.css";
+@import "./_table.css";

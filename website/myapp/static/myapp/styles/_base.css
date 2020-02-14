@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Aldrich|IBM+Plex+Mono:400,700&display=swap&subset=latin-ext');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --mono: 'IBM Plex Mono', monospace;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: var(--mono);
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translate(-50%, -50%);
+    filter: brightness(50%);
+}
+
+.wrapper {
+    max-width: 1200px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
