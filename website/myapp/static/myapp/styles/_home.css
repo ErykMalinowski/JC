@@ -1,0 +1,41 @@
+/* SEKCJA Z WYNIKAMI OSTATNIEJ KOLEJKI */
+
+.content-section {
+    padding: 50px 0;
+}
+
+.matches {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.matches__item {
+    padding: 0 20px;
+}
+
+.team {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+}
+
+.team:first-child {
+    padding-bottom: 5px;
+}
+
+.team__img,
+.team__name {
+    margin-right: 15px;
+}
+
+.team__name,
+.team__score {
+    font-weight: bold;
+}
+
+/* TYTUŁ STRONY */
+
+.content-title {
+    font-size: 4rem;
+}
