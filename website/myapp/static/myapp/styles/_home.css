@@ -39,3 +39,36 @@
 .content-title {
     font-size: 4rem;
 }
+
+/* ARTYKUŁ */
+
+.content-article {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+}
+
+.content-article__header {
+    font-size: 3rem;
+}
+
+.content-article__round {
+    order: -1;
+    font-weight: bold;
+}
+
+.content-article__round,
+.content-article__info,
+.content-article__squad {
+    font-size: 1.5rem;
+}
+
+.content-article__description {
+    font-size: 1.75rem;
+}
+
+.content-article__info,
+.content-article__squad,
+.content-article__description {
+    margin-top: 15px;
+}
