@@ -72,3 +72,22 @@
 .content-article__description {
     margin-top: 15px;
 }
+
+/* ###########################
+####### MEDIA QUERIES ########
+########################### */
+
+/* SEKCJA Z WYNIKAMI OSTATNIEJ KOLEJKI */
+@media screen and (max-width: 1000px) {
+    .matches {
+        justify-content: flex-start;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+    }
+
+    .matches__item {
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+}
