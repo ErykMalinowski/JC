@@ -1,0 +1,18 @@
+.page-footer {
+    margin-top: 100px;
+}
+
+.footer-wrapper {
+    padding: 30px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-copy {
+    font-size: 1.5rem;
+}
+
+.fa-facebook-square {
+    font-size: 3rem;
+}
