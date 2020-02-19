@@ -4,6 +4,21 @@
     padding: 10px 0;
 }
 
+.fixed-header {
+    margin-top: 100px;
+}
+
+.fixed-header .page-header {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 1);
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    /* in order to place results section under sticky header */
+}
+
 .header-wrapper {
     display: flex;
     justify-content: space-between;
@@ -39,23 +54,28 @@
 ########################### */
 
 @media screen and (max-width: 750px) {
-
     .page-navigation {
         height: 100vh;
         width: 300px;
-        background-color: black;
         margin-top: 189px;
+        background-color: black;
         position: absolute;
         top: 0;
         right: 0;
         transform: translateX(300px);
         transition: transform .3s .1s ease-in-out;
+        z-index: 2;
     }
 
     .page-navigation--visible {
         transform: translateX(0);
         z-index: 2;
         /* in order to place results section under the mobile menu */
+    }
+
+    .fixed-header .page-navigation {
+        margin-top: 89px;
+        /* because of margin-top in the fixed-header class */
     }
 
     .page-navigation__items {

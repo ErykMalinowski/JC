@@ -10,6 +10,24 @@ const handleClick = () => {
 
 hamburger.addEventListener('click', handleClick);
 
+// sticky header
+
+const header = document.querySelector(".page-header");
+const topOfHeader = header.offsetTop;
+
+
+const stickyHeader = () => {
+    if (window.scrollY > topOfHeader) {
+        document.body.style.paddingTop = header.offsetHeight + 'px';
+        document.body.classList.add('fixed-header');
+    } else {
+        document.body.style.paddingTop = 0;
+        document.body.classList.remove('fixed-header');
+    }
+}
+
+window.addEventListener('scroll', stickyHeader);
+
 // slider with results
 
 var mySwiper = new Swiper('.swiper-container', {

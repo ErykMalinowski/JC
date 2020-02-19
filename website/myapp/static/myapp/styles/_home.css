@@ -1,19 +1,5 @@
 /* SEKCJA Z WYNIKAMI OSTATNIEJ KOLEJKI */
 
-/* .content-section {
-    padding: 50px 0;
-}
-
-.matches {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.matches__item {
-    padding: 0 20px;
-} */
-
 .team {
     display: flex;
     justify-content: center;
@@ -39,7 +25,7 @@
 
 .swiper-container {
     width: 100%;
-    padding: 25px 0;
+    padding: 50px 0;
 }
 
 .swiper-button-prev,
