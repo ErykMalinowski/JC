@@ -1,6 +1,6 @@
 /* SEKCJA Z WYNIKAMI OSTATNIEJ KOLEJKI */
 
-.content-section {
+/* .content-section {
     padding: 50px 0;
 }
 
@@ -12,10 +12,11 @@
 
 .matches__item {
     padding: 0 20px;
-}
+} */
 
 .team {
     display: flex;
+    justify-content: center;
     align-items: center;
     font-size: 1.6rem;
 }
@@ -32,6 +33,18 @@
 .team__name,
 .team__score {
     font-weight: bold;
+}
+
+/* SLIDER */
+
+.swiper-container {
+    width: 100%;
+    padding: 25px 0;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    display: none;
 }
 
 /* TYTUŁ STRONY */
@@ -77,17 +90,27 @@
 ####### MEDIA QUERIES ########
 ########################### */
 
-/* SEKCJA Z WYNIKAMI OSTATNIEJ KOLEJKI */
 @media screen and (max-width: 1000px) {
-    .matches {
-        justify-content: flex-start;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
+
+    /* SEKCJA Z WYNIKAMI OSTATNIEJ KOLEJKI */
+    /* SLIDER */
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: flex;
+        color: white;
     }
 
-    .matches__item {
-        flex-shrink: 0;
-        scroll-snap-align: start;
+    .swiper-button-prev:after {
+        padding-right: 30px;
+    }
+
+    .swiper-button-next:after {
+        padding-left: 30px;
+    }
+
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+        font-size: 2.5rem;
     }
 }

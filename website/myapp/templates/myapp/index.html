@@ -3,12 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>Jutrzenka Cegłów</title>
     {% load static %}
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'myapp/styles/style.css' %}">
-    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" /> -->
+
+    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script src="{% static 'myapp/scripts/script.js' %}" defer></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+
 </head>
 
 <body>
@@ -37,7 +47,7 @@
     <main class="page-content">
         <div class="wrapper content-wrapper">
             {% block content %}
-            <section class="content-section">
+            <!-- <section class="content-section">
                 <ul class="matches">
                     <li class="matches__item">
                         <div class="team"><img src="{% static 'myapp/images/mini_logo_blekitni_stoczek.png' %}"
@@ -96,6 +106,70 @@
                         </div>
                     </li>
                 </ul>
+            </section> -->
+            <section class="swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <div class="team"><img src="{% static 'myapp/images/mini_logo_blekitni_stoczek.png' %}"
+                                class="team__img"><span class="team__name">BŁĘ</span><span class="team__score">0</span>
+                        </div>
+                        <div class="team"><img src="{% static 'myapp/images/mini_logo_grodzisk_krzymosze.png' %}"
+                                class="team__img"><span class="team__name">GRO</span><span class="team__score">1</span>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="team"><img src="{% static 'myapp/images/mini_logo_jastrzab_zeliszew.png' %}"
+                                class="team__img"><span class="team__name">JAS</span><span class="team__score">2</span>
+                        </div>
+                        <div class="team"><img src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}"
+                                class="team__img"><span class="team__name">JUT</span><span class="team__score">3</span>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="team"><img src="{% static 'myapp/images/mini_logo_kosovia_kosow_lacki.png' %}"
+                                class="team__img"><span class="team__name">KOS</span><span class="team__score">1</span>
+                        </div>
+                        <div class="team"><img src="{% static 'myapp/images/mini_logo_malkinia_gorna.png' %}"
+                                class="team__img"><span class="team__name">MAŁ</span><span class="team__score">0</span>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="team"><img src="{% static 'myapp/images/mini_logo_miedzanka_miedzna.png' %}"
+                                class="team__img"><span class="team__name">MIE</span><span class="team__score">2</span>
+                        </div>
+                        <div class="team"><img src="{% static 'myapp/images/mini_logo_nojszewianka_dobre.png' %}"
+                                class="team__img"><span class="team__name">NOJ</span><span class="team__score">0</span>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="team"><img src="{% static 'myapp/images/mini_logo_ostrowek.png' %}"
+                                class="team__img"><span class="team__name">OST</span><span class="team__score">3</span>
+                        </div>
+                        <div class="team"><img src="{% static 'myapp/images/mini_logo_polonez_mordy.png' %}"
+                                class="team__img"><span class="team__name">POL</span><span class="team__score">0</span>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="team"><img src="{% static 'myapp/images/mini_logo_swit_barczaca.png' %}"
+                                class="team__img"><span class="team__name">BAR</span><span class="team__score">0</span>
+                        </div>
+                        <div class="team"><img src="{% static 'myapp/images/mini_logo_tecza_korczew.png' %}"
+                                class="team__img"><span class="team__name">KOR</span><span class="team__score">0</span>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="team"><img src="{% static 'myapp/images/mini_logo_tecza_stanislawow.png' %}"
+                                class="team__img"><span class="team__name">STA</span><span class="team__score">1</span>
+                        </div>
+                        <div class="team"><img src="{% static 'myapp/images/mini_logo_tygrys_huta_minska.png' %}"
+                                class="team__img"><span class="team__name">TYG</span><span class="team__score">1</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
             </section>
             <h1 class="content-title">Aktualności</h1>
             <article class="content-article">

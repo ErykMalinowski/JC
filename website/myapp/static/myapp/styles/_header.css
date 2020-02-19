@@ -41,19 +41,21 @@
 @media screen and (max-width: 750px) {
 
     .page-navigation {
-        display: block;
         height: 100vh;
         width: 300px;
         background-color: black;
-        margin-top: 100px;
+        margin-top: 189px;
         position: absolute;
         top: 0;
         right: 0;
         transform: translateX(300px);
+        transition: transform .3s .1s ease-in-out;
     }
 
     .page-navigation--visible {
         transform: translateX(0);
+        z-index: 2;
+        /* in order to place results section under the mobile menu */
     }
 
     .page-navigation__items {
@@ -77,15 +79,6 @@
         border: 0;
         margin: 0;
         background-color: transparent;
-    }
-
-    .hamburger,
-    .page-navigation {
-        transition: transform .3s .1s ease-in-out;
-    }
-
-    .hamburger--active {
-        transform: translateX(-300px);
     }
 
     .hamburger__box {
