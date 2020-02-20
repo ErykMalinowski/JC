@@ -1,67 +1,91 @@
-// show/hide page navigation
+document.addEventListener("DOMContentLoaded", () => {
 
-const hamburger = document.querySelector('.hamburger');
-const nav = document.querySelector('.page-navigation');
+    // show/hide mobile menu & prevent scrolling body when mobile menu opened
 
-const handleClick = () => {
-    hamburger.classList.toggle('hamburger--active');
-    nav.classList.toggle('page-navigation--visible');
-}
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('.page-navigation');
 
-hamburger.addEventListener('click', handleClick);
-
-// sticky header
-
-const header = document.querySelector(".page-header");
-const topOfHeader = header.offsetTop;
-
-
-const stickyHeader = () => {
-    if (window.scrollY > topOfHeader) {
-        document.body.style.paddingTop = header.offsetHeight + 'px';
-        document.body.classList.add('fixed-header');
-    } else {
-        document.body.style.paddingTop = 0;
-        document.body.classList.remove('fixed-header');
+    const handleClick = () => {
+        hamburger.classList.toggle('hamburger--active');
+        nav.classList.toggle('page-navigation--visible');
+        document.documentElement.classList.toggle("lock-scroll");
     }
-}
 
-window.addEventListener('scroll', stickyHeader);
+    hamburger.addEventListener('click', handleClick);
 
-// slider with results
+    // click outside menu to close it
 
-var mySwiper = new Swiper('.swiper-container', {
-    slidesPerView: 1,
-    loop: true,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
+    window.addEventListener("click", e => {
+        if (
+            document
+            .querySelector(".page-navigation")
+            .classList.contains("page-navigation--visible")
+        ) {
+            if (!e.composedPath().includes(document.querySelector(".page-header"))) {
+                document
+                    .querySelector(".page-navigation")
+                    .classList.remove("page-navigation--visible");
+                document
+                    .querySelector('.hamburger')
+                    .classList.remove("hamburger--active");
+                document.documentElement.classList.remove("lock-scroll");
+            }
+        }
+    })
 
-    breakpoints: {
-        400: {
-            slidesPerView: 2,
-            loop: true,
-        },
-        550: {
-            slidesPerView: 3,
-            loop: true,
-        },
-        650: {
-            slidesPerView: 4,
-            loop: true,
-        },
-        800: {
-            slidesPerView: 5,
-            loop: true,
-        },
-        950: {
-            slidesPerView: 6,
-            loop: true,
-        },
-        1000: {
-            slidesPerView: 7,
-            loop: false,
-        },
+    // sticky header
+
+    const header = document.querySelector(".page-header");
+    const topOfHeader = header.offsetTop;
+
+
+    const stickyHeader = () => {
+        if (window.scrollY > topOfHeader) {
+            document.body.style.paddingTop = header.offsetHeight + 'px';
+            document.body.classList.add('fixed-header');
+        } else {
+            document.body.style.paddingTop = 0;
+            document.body.classList.remove('fixed-header');
+        }
     }
-})
+
+    window.addEventListener('scroll', stickyHeader);
+
+    // slider with results
+
+    var mySwiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        breakpoints: {
+            400: {
+                slidesPerView: 2,
+                loop: true,
+            },
+            550: {
+                slidesPerView: 3,
+                loop: true,
+            },
+            650: {
+                slidesPerView: 4,
+                loop: true,
+            },
+            800: {
+                slidesPerView: 5,
+                loop: true,
+            },
+            950: {
+                slidesPerView: 6,
+                loop: true,
+            },
+            1000: {
+                slidesPerView: 7,
+                loop: false,
+            },
+        }
+    })
+});

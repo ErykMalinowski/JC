@@ -46,3 +46,7 @@ video {
     padding: 0 30px;
     margin: 0 auto;
 }
+
+.lock-scroll {
+    overflow: hidden;
+}
