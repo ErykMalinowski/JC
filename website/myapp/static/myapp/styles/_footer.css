@@ -13,12 +13,10 @@
     font-size: 1.5rem;
 }
 
-.footer-icon>a {
-    display: block;
-}
-
-.fa-facebook-square {
-    font-size: 3rem;
+.footer-img {
+    filter: invert(100%);
+    width: 30px;
+    height: 30px;
 }
 
 @media screen and (max-width: 600px) {
