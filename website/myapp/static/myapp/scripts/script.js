@@ -60,6 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+        a11y: {
+            prevSlideMessage: 'Poprzedni slajd',
+            nextSlideMessage: 'Następny slajd',
+        },
 
         breakpoints: {
             400: {
