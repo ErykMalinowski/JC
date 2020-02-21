@@ -1,7 +1,31 @@
 abbr {
     text-decoration: none;
+    cursor: help;
 }
 
-.team__short {
+.meta__short {
     display: none;
+}
+
+table {
+    --win: #44ac45;
+    --draw: #ffb22f;
+    --loss: #eb3f30;
+    width: 100%;
+    font-size: 2rem;
+    padding: 30px 0;
+    border-spacing: 0;
+}
+
+th {
+    padding: 2rem 1rem;
+}
+
+.club {
+    text-align: left;
+}
+
+td {
+    padding: 1rem 0;
+    border-bottom: .1rem solid rgba(255, 255, 255, .3);
 }
