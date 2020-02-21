@@ -1,0 +1,7 @@
+abbr {
+    text-decoration: none;
+}
+
+.team__short {
+    display: none;
+}

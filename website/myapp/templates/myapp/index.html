@@ -32,7 +32,7 @@
                     <li class="page-navigation__item"><a href="{% url 'home' %}" class="page-navigation__link"
                             aria-label="Przejdź do strony głównej">STRONA
                             GŁÓWNA</a></li>
-                    <li class="page-navigation__item"><a href="" class="page-navigation__link"
+                    <li class="page-navigation__item"><a href="{% url 'table' %}" class="page-navigation__link"
                             aria-label="Przejdź do tabeli rozgrywek">TABELA</a></li>
                     <li class="page-navigation__item"><a href="" class="page-navigation__link"
                             aria-label="Przejdź do terminarza rozgrywek">MECZE</a></li>
@@ -44,7 +44,6 @@
     </header>
     <main class="page-content">
         <div class="wrapper content-wrapper">
-            {% block content %}
             <section class="swiper-container">
                 <ul class="swiper-wrapper">
                     <li class="swiper-slide">
@@ -109,6 +108,8 @@
                 <div class="swiper-button-next"></div>
 
             </section>
+
+            {% block content %}
             <h1 class="content-title">Aktualności</h1>
             <article class="content-article">
                 <h2 class="content-article__header">Jutrzenka&nbsp;Cegłów - Watra&nbsp;Mrozy 3:0&nbsp;(2:0)</h2>
