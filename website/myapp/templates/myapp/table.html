@@ -3,8 +3,8 @@
 {% block content %}
 <h1 class="content-title">Tabela rozgrywek</h1>
 <table class="content-table">
-    <thead class="content-table__head">
-        <tr class="content-table__row">
+    <thead>
+        <tr>
             <th><abbr title="Pozycja">#</abbr></th>
             <th class="club">Klub</th>
             <th><abbr title="Mecze">M</abbr></th>
@@ -13,13 +13,13 @@
             <th><abbr title="Porażki">P</abbr></th>
             <th><abbr title="Bramki">Br</abbr></th>
             <th><abbr title="Bilans">+/-</abbr></th>
-            <th class="points"><abbr title="Punkty">Pkt</abbr></th>
+            <th><abbr title="Punkty">Pkt</abbr></th>
             <th class="form">Forma</th>
             <th class="next-match"><abbr title="Następny mecz">Nast. mecz</abbr></th>
         </tr class="content-table">
     </thead class="content-table">
-    <tbody class="content-table__body">
-        <tr class="content-table__row">
+    <tbody>
+        <tr>
             <!-- JC w tabeli wyrożniona, klasa active czy coś -->
             <td><span class="promotion"><span>1</span></span></td>
             <td class="meta">
@@ -34,14 +34,21 @@
             <td>75:25</td>
             <td>50</td>
             <td>64</td>
-            <td class="form">Z Z Z R P</td>
-            <!-- zawartość formy jako lista -->
+            <td class="form">
+                <ul>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="draw"><abbr title="Remis">R</abbr></li>
+                    <li class="loss"><abbr title="Porażka">P</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                </ul>
+            </td>
             <td class="next-match">
                 <span class="next-match__img"><img
                         src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}"></span>
             </td>
         </tr>
-        <tr class="content-table__row">
+        <tr>
             <td><span class="promotion"><span>2</span></span></td>
             <td class="meta">
                 <span class="meta__img"><img src="{% static 'myapp/images/mini_logo_blekitni_stoczek.png' %}"></span>
@@ -55,14 +62,21 @@
             <td>75:25</td>
             <td>50</td>
             <td>64</td>
-            <td class="form">Z Z Z R P</td>
-            <!-- zawartość formy jako lista -->
+            <td class="form">
+                <ul>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="draw"><abbr title="Remis">R</abbr></li>
+                    <li class="loss"><abbr title="Porażka">P</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                </ul>
+            </td>
             <td class="next-match">
                 <span class="next-match__img"><img
                         src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}"></span>
             </td>
         </tr>
-        <tr class="content-table__row">
+        <tr>
             <td><span class="promotion"><span>3</span></span></td>
             <td class="meta">
                 <span class="meta__img"><img src="{% static 'myapp/images/mini_logo_grodzisk_krzymosze.png' %}"></span>
@@ -76,14 +90,21 @@
             <td>75:25</td>
             <td>50</td>
             <td>64</td>
-            <td class="form">Z Z Z R P</td>
-            <!-- zawartość formy jako lista -->
+            <td class="form">
+                <ul>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="draw"><abbr title="Remis">R</abbr></li>
+                    <li class="loss"><abbr title="Porażka">P</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                </ul>
+            </td>
             <td class="next-match">
                 <span class="next-match__img"><img
                         src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}"></span>
             </td>
         </tr>
-        <tr class="content-table__row">
+        <tr>
             <td>4</td>
             <td class="meta">
                 <span class="meta__img"><img src="{% static 'myapp/images/mini_logo_kosovia_kosow_lacki.png' %}"></span>
@@ -97,14 +118,21 @@
             <td>75:25</td>
             <td>50</td>
             <td>64</td>
-            <td class="form">Z Z Z R P</td>
-            <!-- zawartość formy jako lista -->
+            <td class="form">
+                <ul>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="draw"><abbr title="Remis">R</abbr></li>
+                    <li class="loss"><abbr title="Porażka">P</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                </ul>
+            </td>
             <td class="next-match">
                 <span class="next-match__img"><img
                         src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}"></span>
             </td>
         </tr>
-        <tr class="content-table__row">
+        <tr>
             <td>5</td>
             <td class="meta">
                 <span class="meta__img"><img src="{% static 'myapp/images/mini_logo_jastrzab_zeliszew.png' %}"></span>
@@ -118,14 +146,21 @@
             <td>75:25</td>
             <td>50</td>
             <td>64</td>
-            <td class="form">Z Z Z R P</td>
-            <!-- zawartość formy jako lista -->
+            <td class="form">
+                <ul>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="draw"><abbr title="Remis">R</abbr></li>
+                    <li class="loss"><abbr title="Porażka">P</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                </ul>
+            </td>
             <td class="next-match">
                 <span class="next-match__img"><img
                         src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}"></span>
             </td>
         </tr>
-        <tr class="content-table__row">
+        <tr>
             <td>6</td>
             <td class="meta">
                 <span class="meta__img"><img src="{% static 'myapp/images/mini_logo_malkinia_gorna.png' %}"></span>
@@ -139,14 +174,21 @@
             <td>75:25</td>
             <td>50</td>
             <td>64</td>
-            <td class="form">Z Z Z R P</td>
-            <!-- zawartość formy jako lista -->
+            <td class="form">
+                <ul>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="draw"><abbr title="Remis">R</abbr></li>
+                    <li class="loss"><abbr title="Porażka">P</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                </ul>
+            </td>
             <td class="next-match">
                 <span class="next-match__img"><img
                         src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}"></span>
             </td>
         </tr>
-        <tr class="content-table__row">
+        <tr>
             <td>7</td>
             <td class="meta">
                 <span class="meta__img"><img src="{% static 'myapp/images/mini_logo_miedzanka_miedzna.png' %}"></span>
@@ -160,14 +202,21 @@
             <td>7:25</td>
             <td>50</td>
             <td>64</td>
-            <td class="form">Z Z Z R P</td>
-            <!-- zawartość formy jako lista -->
+            <td class="form">
+                <ul>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="draw"><abbr title="Remis">R</abbr></li>
+                    <li class="loss"><abbr title="Porażka">P</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                </ul>
+            </td>
             <td class="next-match">
                 <span class="next-match__img"><img
                         src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}"></span>
             </td>
         </tr>
-        <tr class="content-table__row">
+        <tr>
             <td>8</td>
             <td class="meta">
                 <span class="meta__img"><img src="{% static 'myapp/images/mini_logo_nojszewianka_dobre.png' %}"></span>
@@ -181,14 +230,21 @@
             <td>75:25</td>
             <td>50</td>
             <td>64</td>
-            <td class="form">Z Z Z R P</td>
-            <!-- zawartość formy jako lista -->
+            <td class="form">
+                <ul>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="draw"><abbr title="Remis">R</abbr></li>
+                    <li class="loss"><abbr title="Porażka">P</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                </ul>
+            </td>
             <td class="next-match">
                 <span class="next-match__img"><img
                         src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}"></span>
             </td>
         </tr>
-        <tr class="content-table__row">
+        <tr>
             <td>9</td>
             <td class="meta">
                 <span class="meta__img"><img src="{% static 'myapp/images/mini_logo_ostrowek.png' %}"></span>
@@ -202,14 +258,21 @@
             <td>15:8</td>
             <td>5</td>
             <td>64</td>
-            <td class="form">Z Z Z R P</td>
-            <!-- zawartość formy jako lista -->
+            <td class="form">
+                <ul>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="draw"><abbr title="Remis">R</abbr></li>
+                    <li class="loss"><abbr title="Porażka">P</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                </ul>
+            </td>
             <td class="next-match">
                 <span class="next-match__img"><img
                         src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}"></span>
             </td>
         </tr>
-        <tr class="content-table__row">
+        <tr>
             <td>10</td>
             <td class="meta">
                 <span class="meta__img"><img src="{% static 'myapp/images/mini_logo_polonez_mordy.png' %}"></span>
@@ -223,14 +286,21 @@
             <td>5:4</td>
             <td>8</td>
             <td>64</td>
-            <td class="form">Z Z Z R P</td>
-            <!-- zawartość formy jako lista -->
+            <td class="form">
+                <ul>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="draw"><abbr title="Remis">R</abbr></li>
+                    <li class="loss"><abbr title="Porażka">P</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                </ul>
+            </td>
             <td class="next-match">
                 <span class="next-match__img"><img
                         src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}"></span>
             </td>
         </tr>
-        <tr class="content-table__row">
+        <tr>
             <td>11</td>
             <td class="meta">
                 <span class="meta__img"><img src="{% static 'myapp/images/mini_logo_swit_barczaca.png' %}"></span>
@@ -244,14 +314,21 @@
             <td>75:25</td>
             <td>50</td>
             <td>64</td>
-            <td class="form">Z Z Z R P</td>
-            <!-- zawartość formy jako lista -->
+            <td class="form">
+                <ul>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="draw"><abbr title="Remis">R</abbr></li>
+                    <li class="loss"><abbr title="Porażka">P</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                </ul>
+            </td>
             <td class="next-match">
                 <span class="next-match__img"><img
                         src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}"></span>
             </td>
         </tr>
-        <tr class="content-table__row">
+        <tr>
             <td><span class="relegation"><span>12</span></span></td>
             <td class="meta">
                 <span class="meta__img"><img src="{% static 'myapp/images/mini_logo_tecza_korczew.png' %}"></span>
@@ -265,14 +342,21 @@
             <td>75:25</td>
             <td>50</td>
             <td>64</td>
-            <td class="form">Z Z Z R P</td>
-            <!-- zawartość formy jako lista -->
+            <td class="form">
+                <ul>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="draw"><abbr title="Remis">R</abbr></li>
+                    <li class="loss"><abbr title="Porażka">P</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                </ul>
+            </td>
             <td class="next-match">
                 <span class="next-match__img"><img
                         src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}"></span>
             </td>
         </tr>
-        <tr class="content-table__row">
+        <tr>
             <td><span class="relegation"><span>13</span></span></td>
             <td class="meta">
                 <span class="meta__img"><img src="{% static 'myapp/images/mini_logo_tecza_stanislawow.png' %}"></span>
@@ -286,14 +370,21 @@
             <td>75:125</td>
             <td>-50</td>
             <td>9</td>
-            <td class="form">Z Z Z R P</td>
-            <!-- zawartość formy jako lista -->
+            <td class="form">
+                <ul>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="draw"><abbr title="Remis">R</abbr></li>
+                    <li class="loss"><abbr title="Porażka">P</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                </ul>
+            </td>
             <td class="next-match">
                 <span class="next-match__img"><img
                         src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}"></span>
             </td>
         </tr>
-        <tr class="content-table__row">
+        <tr>
             <td><span class="relegation"><span>14</span></span></td>
             <td class="meta">
                 <span class="meta__img"><img src="{% static 'myapp/images/mini_logo_tygrys_huta_minska.png' %}"></span>
@@ -307,8 +398,15 @@
             <td>75:25</td>
             <td>50</td>
             <td>64</td>
-            <td class="form">Z Z Z R P</td>
-            <!-- zawartość formy jako lista -->
+            <td class="form">
+                <ul>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="draw"><abbr title="Remis">R</abbr></li>
+                    <li class="loss"><abbr title="Porażka">P</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                </ul>
+            </td>
             <td class="next-match">
                 <span class="next-match__img"><img
                         src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}"></span>

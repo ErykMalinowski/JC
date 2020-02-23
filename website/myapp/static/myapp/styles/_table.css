@@ -7,7 +7,7 @@ abbr {
     display: none;
 }
 
-table {
+.content-table {
     --win: #44AC45;
     --draw: #FFB22F;
     --loss: #EB3F30;
@@ -24,7 +24,6 @@ th {
 }
 
 .club {
-    width: 40%;
     text-align: left;
 }
 
@@ -59,6 +58,10 @@ td {
     text-align: left;
 }
 
+.meta__name {
+    font-weight: bold;
+}
+
 .meta__img {
     margin-left: 10px;
 }
@@ -66,4 +69,25 @@ td {
 .meta__img>img,
 .next-match__img>img {
     vertical-align: middle;
+}
+
+.form>ul>li {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+.win {
+    background-color: var(--win);
+}
+
+.draw {
+    background-color: var(--draw);
+}
+
+.loss {
+    background-color: var(--loss);
 }
