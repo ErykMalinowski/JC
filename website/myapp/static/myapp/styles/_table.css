@@ -8,9 +8,11 @@ abbr {
 }
 
 table {
-    --win: #44ac45;
-    --draw: #ffb22f;
-    --loss: #eb3f30;
+    --win: #44AC45;
+    --draw: #FFB22F;
+    --loss: #EB3F30;
+    --promotion: #1B7700;
+    --relegation: #BD0000;
     width: 100%;
     font-size: 2rem;
     padding: 30px 0;
@@ -22,10 +24,46 @@ th {
 }
 
 .club {
+    width: 40%;
     text-align: left;
 }
 
 td {
+    text-align: center;
     padding: 1rem 0;
     border-bottom: .1rem solid rgba(255, 255, 255, .3);
+}
+
+.promotion,
+.relegation {
+    display: inline-block;
+    padding: 0 1rem;
+    transform: skewX(-20deg);
+}
+
+.promotion {
+    background-color: var(--promotion);
+}
+
+.relegation {
+    background-color: var(--relegation);
+}
+
+.promotion>span,
+.relegation>span {
+    display: inline-block;
+    transform: skewX(20deg);
+}
+
+.meta {
+    text-align: left;
+}
+
+.meta__img {
+    margin-left: 10px;
+}
+
+.meta__img>img,
+.next-match__img>img {
+    vertical-align: middle;
 }

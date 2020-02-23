@@ -16,6 +16,10 @@
     margin-right: 15px;
 }
 
+.team__img>img {
+    vertical-align: middle;
+}
+
 .team__name,
 .team__score {
     font-weight: bold;
