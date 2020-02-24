@@ -1,11 +1,10 @@
-abbr {
-    text-decoration: none;
-    cursor: help;
-}
+/* SKRÓCONA NAZWA (na mobile) */
 
 .meta__short {
     display: none;
 }
+
+/* STYLE DLA TABELI */
 
 .content-table {
     --win: #44AC45;
@@ -19,6 +18,8 @@ abbr {
     border-spacing: 0;
 }
 
+/* NAGŁÓWEK TABELI */
+
 th {
     padding: 2rem 1rem;
 }
@@ -27,11 +28,15 @@ th {
     text-align: left;
 }
 
+/* KOMÓRKI TABELI (treść) */
+
 td {
     text-align: center;
     padding: 1rem 0;
     border-bottom: .1rem solid rgba(255, 255, 255, .3);
 }
+
+/* KOLUMNA Z POZYCJĄ */
 
 .promotion,
 .relegation {
@@ -54,6 +59,8 @@ td {
     transform: skewX(20deg);
 }
 
+/* KOLUMNA Z NAZWĄ DRUŻYNY */
+
 .meta {
     text-align: left;
 }
@@ -70,6 +77,14 @@ td {
 .next-match__img>img {
     vertical-align: middle;
 }
+
+/* KOLUMNA Z PUNKTAMI */
+
+.points {
+    font-weight: bold;
+}
+
+/* KOLUMNA Z FORMĄ */
 
 .form>ul>li {
     display: inline-block;
@@ -90,4 +105,41 @@ td {
 
 .loss {
     background-color: var(--loss);
+}
+
+/* STOPKA TABELI */
+
+.foot {
+    padding: 2rem 1rem;
+    text-align: left;
+}
+
+.legend__item {
+    display: inline-block;
+}
+
+.legend__item:not(:last-of-type) {
+    margin-right: 2rem;
+}
+
+.color--promotion {
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    margin-right: 1rem;
+    vertical-align: middle;
+    background-color: var(--promotion);
+}
+
+.color--relegation {
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    margin-right: 1rem;
+    vertical-align: middle;
+    background-color: var(--relegation);
+}
+
+.text {
+    vertical-align: middle;
 }
