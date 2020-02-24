@@ -56,8 +56,3 @@ video {
 .lock-scroll {
     overflow: hidden;
 }
-
-abbr {
-    text-decoration: none;
-    cursor: help;
-}

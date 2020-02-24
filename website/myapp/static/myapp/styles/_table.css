@@ -1,3 +1,10 @@
+/* PODSTAWOWE STYLE */
+
+abbr {
+    text-decoration: none;
+    cursor: help;
+}
+
 /* SKRÓCONA NAZWA (na mobile) */
 
 .meta__short {
@@ -112,6 +119,7 @@ td {
 .foot {
     padding: 2rem 1rem;
     text-align: left;
+    border-bottom: none;
 }
 
 .legend__item {
