@@ -95,11 +95,11 @@
     }
 
     .swiper-button-prev:after {
-        padding-right: 30px;
+        margin-right: 30px;
     }
 
     .swiper-button-next:after {
-        padding-left: 30px;
+        margin-left: 30px;
     }
 
     .swiper-button-prev:after,
