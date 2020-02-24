@@ -115,14 +115,43 @@ td:first-child:not(:last-child) {
 
 .win {
     background-color: var(--win);
+    position: relative;
 }
 
 .draw {
     background-color: var(--draw);
+    position: relative;
 }
 
 .loss {
     background-color: var(--loss);
+    position: relative;
+}
+
+/* HOVER NA IKONCE Z FORMĄ */
+
+[data-tooltip]:before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    content: attr(data-tooltip);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity .5s;
+    background-color: black;
+    color: white;
+    padding: 8px 15px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+[data-tooltip]:hover:before {
+    opacity: 1;
+}
+
+[data-tooltip]:not([data-tooltip-persistent]):before {
+    pointer-events: none;
 }
 
 /* STOPKA TABELI */
