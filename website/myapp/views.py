@@ -6,3 +6,6 @@ class HomeView(TemplateView):
 
 class TableView(TemplateView):
     template_name = "myapp/table.html"
+
+class MatchesView(TemplateView):
+    template_name = "myapp/matches.html"
