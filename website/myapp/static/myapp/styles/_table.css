@@ -130,28 +130,27 @@ td:first-child:not(:last-child) {
 
 /* HOVER NA IKONCE Z FORMĄ */
 
-[data-tooltip]:before {
+.tooltip {
+    display: none;
+}
+
+.win:hover .tooltip {
+    display: block;
     position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -100%);
-    content: attr(data-tooltip);
-    white-space: nowrap;
-    opacity: 0;
-    transition: opacity .5s;
+    top: -200%;
+    left: calc(-105px + 50%);
+    width: 210px;
+    padding: 10px;
     background-color: black;
-    color: white;
-    padding: 8px 15px;
     border: 2px solid white;
     border-radius: 10px;
 }
 
-[data-tooltip]:hover:before {
-    opacity: 1;
-}
-
-[data-tooltip]:not([data-tooltip-persistent]):before {
-    pointer-events: none;
+.win:hover .tooltip .result {
+    background-color: white;
+    color: black;
+    padding: 3px 5px;
+    border-radius: 5px;
 }
 
 /* STOPKA TABELI */
