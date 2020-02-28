@@ -3,8 +3,10 @@
 {% block content %}
 <h1 class="content-title">Terminarz rozgrywek</h1>
 
-<label>Numer kolejki:
-    <select class="select-round" name="round">
+<label class="round-label">Numer kolejki:
+    <!-- input z przykładowym numerem kolejki -->
+    <input type="hidden" name="active-round" value="3">
+    <select class="round-select" name="round">
         <option value="">wybierz</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -12,7 +14,19 @@
         <option value="4">4</option>
     </select>
 </label>
-<section class="round">
 
+<!-- generowac sekcję na podstawie numeru kolejki -->
+<section class="round-content">
+    <ul>
+        <li>
+            <img src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}">
+            <span>Jutrzenka Cegłów</span>
+            <span>JUT</span>
+            <span>0:0 </span>
+            <span>BŁĘ</span>
+            <span>Błękitni Stoczek</span>
+            <img src="{% static 'myapp/images/mini_logo_blekitni_stoczek.png' %}">
+        </li>
+    </ul>
 </section>
 {% endblock %}

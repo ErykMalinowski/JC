@@ -1,0 +1,18 @@
+.round-label {
+    display: block;
+    font-size: 1.75rem;
+    margin: 30px 0;
+}
+
+.round-select {
+    font-family: var(--mono);
+    font-size: 1.75rem;
+    color: white;
+    background-color: transparent;
+    padding: 5px 10px;
+    border: 1px solid white;
+}
+
+.round-content span {
+    font-size: 2rem;
+}

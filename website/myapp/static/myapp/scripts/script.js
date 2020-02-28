@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // slider with results
 
-    let mySwiper = new Swiper('.swiper-container', {
+    const mySwiper = new Swiper('.swiper-container', {
         slidesPerView: 1,
         loop: true,
         navigation: {
@@ -95,10 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // select round
 
-    const select = document.querySelector('.select-round');
+    const select = document.querySelector('.round-select');
 
-    select.addEventListener('change', (event) => {
-        const round = document.querySelector('.round');
-        round.textContent = `Wyniki kolejki ${event.target.value}`;
+    select.addEventListener('change', (e) => {
+        document.querySelector('input[type="hidden"]').value = e.target.value;
     });
 });
