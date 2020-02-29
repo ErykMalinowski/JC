@@ -7,12 +7,43 @@
 .round-select {
     font-family: var(--mono);
     font-size: 1.75rem;
-    color: white;
     background-color: transparent;
+    color: white;
     padding: 5px 10px;
     border: 1px solid white;
 }
 
+.round-select>option {
+    background-color: black;
+    color: white;
+}
+
+.round-content li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .round-content span {
     font-size: 2rem;
+}
+
+.round-content img:first-of-type {
+    margin-right: 10px;
+}
+
+.round-content img:last-of-type {
+    margin-left: 10px;
+}
+
+.round-content .short-name {
+    display: none;
+}
+
+.round-content .result {
+    background-color: rgba(0, 0, 0, .3);
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin: 0 20px;
 }

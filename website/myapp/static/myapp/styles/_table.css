@@ -138,8 +138,8 @@ td:first-child:not(:last-child) {
     display: block;
     position: absolute;
     top: -200%;
-    left: calc(-105px + 50%);
-    width: 210px;
+    left: calc(-125px + 50%);
+    width: 250px;
     padding: 10px;
     background-color: black;
     border: 2px solid white;
@@ -151,6 +151,11 @@ td:first-child:not(:last-child) {
     color: black;
     padding: 3px 5px;
     border-radius: 5px;
+}
+
+.win:hover .tooltip img,
+.win:hover .tooltip span {
+    vertical-align: middle;
 }
 
 /* STOPKA TABELI */
