@@ -9,3 +9,6 @@ class TableView(TemplateView):
 
 class MatchesView(TemplateView):
     template_name = "myapp/matches.html"
+
+class StatsView(TemplateView):
+    template_name = "myapp/stats.html"

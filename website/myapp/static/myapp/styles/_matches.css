@@ -11,6 +11,7 @@
     color: white;
     padding: 5px 10px;
     border: 1px solid white;
+    border-radius: 5px;
 }
 
 .round-select>option {
@@ -22,10 +23,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5px;
 }
 
 .round-content span {
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .round-content img:first-of-type {
@@ -46,4 +48,5 @@
     font-weight: bold;
     padding: 5px 10px;
     margin: 0 20px;
+    border-radius: 5px;
 }
