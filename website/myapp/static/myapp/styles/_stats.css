@@ -1,0 +1,23 @@
+.stats-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px 0;
+}
+
+.stats-content>table {
+    flex-basis: calc(100%/3 - 40px/3);
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.stats-content>table>thead>tr {
+    background-color: red;
+}
+
+.stats-content>table>thead>tr>th {
+    padding: 0
+}
+
+.assists-table {
+    margin: 0 20px
+}

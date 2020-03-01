@@ -20,9 +20,8 @@ abbr {
     --promotion: #1B7700;
     --relegation: #BD0000;
     width: 100%;
-    font-size: 1.8rem;
     padding: 30px 0;
-    border-spacing: 0;
+    font-size: 1.8rem;
 }
 
 /* NAGŁÓWEK TABELI */
@@ -92,7 +91,9 @@ td:first-child:not(:last-child) {
 }
 
 .meta__img>img,
-.next-match__img>img {
+.next-match__img>img,
+.meta__name,
+.meta__short {
     vertical-align: middle;
 }
 
@@ -258,7 +259,7 @@ td:first-child:not(:last-child) {
     /* KOLUMNA Z NAZWĄ DRUŻYNY */
 
     .meta__img {
-        margin-left: 10px;
+        margin-left: 5px;
     }
 
     /* STOPKA */

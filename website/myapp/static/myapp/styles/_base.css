@@ -34,6 +34,10 @@ a:focus {
     color: black;
 }
 
+table {
+    border-spacing: 0;
+}
+
 video {
     position: fixed;
     top: 50%;

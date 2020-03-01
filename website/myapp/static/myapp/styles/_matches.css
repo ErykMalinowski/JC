@@ -50,3 +50,36 @@
     margin: 0 20px;
     border-radius: 5px;
 }
+
+@media screen and (max-width: 750px) {
+    .round-content span {
+        font-size: 2rem;
+    }
+
+    .round-content .result {
+        margin: 0 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .round-label {
+        font-size: 1.5rem;
+    }
+
+    .round-select {
+        font-size: 1.5rem;
+    }
+
+    .round-content .full-name {
+        display: none;
+    }
+
+    .round-content .short-name {
+        display: block;
+        font-weight: bold;
+    }
+
+    .round-content .result {
+        margin: 0 15px;
+    }
+}
