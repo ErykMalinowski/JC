@@ -8,16 +8,104 @@
 .stats-content>table {
     flex-basis: calc(100%/3 - 40px/3);
     background-color: rgba(0, 0, 0, .3);
+    font-size: 2rem;
 }
 
-.stats-content>table>thead>tr {
-    background-color: red;
+.stats-content th {
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
 }
 
-.stats-content>table>thead>tr>th {
-    padding: 0
+.stats-content td,
+.stats-content td:first-child:not(:last-child) {
+    padding: 0;
+}
+
+.stats-content td {
+    padding: 10px 0;
+}
+
+.stats-content td:first-child {
+    text-align: left;
+    padding-left: 10px !important;
+    /* potem do usunięcia ten important */
+}
+
+.stats-content tbody tr:last-child td {
+    border: none;
 }
 
 .assists-table {
     margin: 0 20px
+}
+
+.plus {
+    width: 12px;
+    height: 12px;
+    margin-bottom: 2px;
+    filter: invert(100%);
+}
+
+@media screen and (max-width: 1050px) {
+    .stats-content>table {
+        flex-basis: calc(100%/2 - 20px/2);
+    }
+
+    .stats-content td:first-child {
+        padding-left: 20px !important;
+        /* potem do usunięcia ten important */
+    }
+
+    .goals-table {
+        margin-right: 10px;
+    }
+
+    .assists-table {
+        margin: 0 0 0 10px;
+    }
+
+    .goals-assists {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .stats-content>table {
+        flex-basis: 80%;
+    }
+
+    .stats-content td:first-child {
+        padding-left: 30px !important;
+        /* potem do usunięcia ten important */
+    }
+
+    .goals-table {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .assists-table {
+        margin: 0 0 20px 0;
+    }
+
+    .goals-assists {
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .stats-content>table {
+        font-size: 1.75rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .stats-content>table {
+        flex-basis: 100%;
+        font-size: 1.5rem;
+    }
+
+    .stats-content td:first-child {
+        padding-left: 15px !important;
+        /* potem do usunięcia ten important */
+    }
 }
