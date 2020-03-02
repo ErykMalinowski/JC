@@ -1,40 +1,43 @@
-.stats-content {
+.content-stats {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     padding: 30px 0;
 }
 
-.stats-content>table {
+.content-stats>table {
     flex-basis: calc(100%/3 - 40px/3);
     background-color: rgba(0, 0, 0, .3);
     font-size: 2rem;
 }
 
-.stats-content th {
+.content-stats th,
+.content-stats td:not(last-child) {
     border-bottom: 1px solid rgba(255, 255, 255, .3);
 }
 
-.stats-content td,
-.stats-content td:first-child:not(:last-child) {
-    padding: 0;
+.content-stats th {
+    padding: 20px 10px;
 }
 
-.stats-content td {
+.content-stats td {
     padding: 10px 0;
 }
 
-.stats-content td:first-child {
+.content-stats td:first-child {
     text-align: left;
-    padding-left: 10px !important;
-    /* potem do usunięcia ten important */
+    padding-left: 10px;
 }
 
-.stats-content tbody tr:last-child td {
+.content-stats td:nth-child(2) {
+    text-align: center;
+}
+
+.content-stats tbody tr:last-child td {
     border: none;
 }
 
-.assists-table {
+.content-stats__assists {
     margin: 0 20px
 }
 
@@ -46,66 +49,75 @@
 }
 
 @media screen and (max-width: 1050px) {
-    .stats-content>table {
+    .content-stats>table {
         flex-basis: calc(100%/2 - 20px/2);
     }
 
-    .stats-content td:first-child {
-        padding-left: 20px !important;
-        /* potem do usunięcia ten important */
+    .content-stats td:first-child {
+        padding-left: 20px;
     }
 
-    .goals-table {
+    .content-stats__goals {
         margin-right: 10px;
     }
 
-    .assists-table {
+    .content-stats__assists {
         margin: 0 0 0 10px;
     }
 
-    .goals-assists {
+    .content-stats__total {
         margin-top: 20px;
     }
 }
 
 @media screen and (max-width: 750px) {
-    .stats-content>table {
+    .content-stats>table {
         flex-basis: 80%;
     }
 
-    .stats-content td:first-child {
-        padding-left: 30px !important;
-        /* potem do usunięcia ten important */
+    .content-stats th:nth-child(2) {
+        width: 100px;
     }
 
-    .goals-table {
+    .content-stats td:first-child {
+        padding-left: 30px;
+    }
+
+    .content-stats__goals {
         margin-right: 0;
         margin-bottom: 20px;
     }
 
-    .assists-table {
+    .content-stats__assists {
         margin: 0 0 20px 0;
     }
 
-    .goals-assists {
+    .content-stats__total {
         margin-top: 0;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .stats-content>table {
+    .content-stats>table {
         font-size: 1.75rem;
+    }
+
+    .content-stats th {
+        padding: 15px 10px;
     }
 }
 
-@media screen and (max-width: 450px) {
-    .stats-content>table {
+@media screen and (max-width: 500px) {
+    .content-stats>table {
         flex-basis: 100%;
         font-size: 1.5rem;
     }
 
-    .stats-content td:first-child {
-        padding-left: 15px !important;
-        /* potem do usunięcia ten important */
+    .content-stats th:nth-child(2) {
+        width: 83px;
+    }
+
+    .content-stats td:first-child {
+        padding-left: 15px;
     }
 }

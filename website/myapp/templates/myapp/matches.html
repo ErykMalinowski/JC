@@ -3,10 +3,10 @@
 {% block content %}
 <h1 class="content-title">Terminarz rozgrywek</h1>
 
-<label class="round-label">Numer kolejki:
+<label class="content-label">Numer kolejki:
     <!-- input z przykładowym numerem kolejki -->
     <input type="hidden" name="active-round" value="3">
-    <select class="round-select" name="round">
+    <select class="content-select" name="round">
         <option value="">wybierz</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -16,69 +16,69 @@
 </label>
 
 <!-- generowac sekcję na podstawie numeru kolejki -->
-<section class="round-content">
-    <ul>
-        <li>
+<section class="content-round">
+    <ul class="matches">
+        <li class="match">
+            <span><img src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}"></span>
+            <span class="match__team match__team--full-name">Jutrzenka Cegłów</span>
+            <span class="match__team match__team--short-name">JUT</span>
+            <span class="match__result">0:0 </span>
+            <span class="match__team match__team--short-name">BŁĘ</span>
+            <span class="match__team match__team--full-name">Błękitni Stoczek</span>
+            <span><img src="{% static 'myapp/images/mini_logo_blekitni_stoczek.png' %}"></span>
+        </li>
+        <li class="match">
             <img src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}">
-            <span class="full-name">Jutrzenka Cegłów</span>
-            <span class="short-name">JUT</span>
-            <span class="result">0:0 </span>
-            <span class="short-name">BŁĘ</span>
-            <span class="full-name">Błękitni Stoczek</span>
+            <span class="match__team match__team--full-name">Jutrzenka Cegłów</span>
+            <span class="match__team match__team--short-name">JUT</span>
+            <span class="match__result">0:0 </span>
+            <span class="match__team match__team--short-name">BŁĘ</span>
+            <span class="match__team match__team--full-name">Błękitni Stoczek</span>
             <img src="{% static 'myapp/images/mini_logo_blekitni_stoczek.png' %}">
         </li>
-        <li>
+        <li class="match">
             <img src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}">
-            <span class="full-name">Jutrzenka Cegłów</span>
-            <span class="short-name">JUT</span>
-            <span class="result">0:0 </span>
-            <span class="short-name">BŁĘ</span>
-            <span class="full-name">Błękitni Stoczek</span>
+            <span class="match__team match__team--full-name">Jutrzenka Cegłów</span>
+            <span class="match__team match__team--short-name">JUT</span>
+            <span class="match__result">0:0 </span>
+            <span class="match__team match__team--short-name">BŁĘ</span>
+            <span class="match__team match__team--full-name">Błękitni Stoczek</span>
             <img src="{% static 'myapp/images/mini_logo_blekitni_stoczek.png' %}">
         </li>
-        <li>
+        <li class="match">
             <img src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}">
-            <span class="full-name">Jutrzenka Cegłów</span>
-            <span class="short-name">JUT</span>
-            <span class="result">0:0 </span>
-            <span class="short-name">BŁĘ</span>
-            <span class="full-name">Błękitni Stoczek</span>
+            <span class="match__team match__team--full-name">Jutrzenka Cegłów</span>
+            <span class="match__team match__team--short-name">JUT</span>
+            <span class="match__result">0:0 </span>
+            <span class="match__team match__team--short-name">BŁĘ</span>
+            <span class="match__team match__team--full-name">Błękitni Stoczek</span>
             <img src="{% static 'myapp/images/mini_logo_blekitni_stoczek.png' %}">
         </li>
-        <li>
+        <li class="match">
             <img src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}">
-            <span class="full-name">Jutrzenka Cegłów</span>
-            <span class="short-name">JUT</span>
-            <span class="result">0:0 </span>
-            <span class="short-name">BŁĘ</span>
-            <span class="full-name">Błękitni Stoczek</span>
+            <span class="match__team match__team--full-name">Jutrzenka Cegłów</span>
+            <span class="match__team match__team--short-name">JUT</span>
+            <span class="match__result">0:0 </span>
+            <span class="match__team match__team--short-name">BŁĘ</span>
+            <span class="match__team match__team--full-name">Błękitni Stoczek</span>
             <img src="{% static 'myapp/images/mini_logo_blekitni_stoczek.png' %}">
         </li>
-        <li>
+        <li class="match">
             <img src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}">
-            <span class="full-name">Jutrzenka Cegłów</span>
-            <span class="short-name">JUT</span>
-            <span class="result">0:0 </span>
-            <span class="short-name">BŁĘ</span>
-            <span class="full-name">Błękitni Stoczek</span>
+            <span class="match__team match__team--full-name">Jutrzenka Cegłów</span>
+            <span class="match__team match__team--short-name">JUT</span>
+            <span class="match__result">0:0 </span>
+            <span class="match__team match__team--short-name">BŁĘ</span>
+            <span class="match__team match__team--full-name">Błękitni Stoczek</span>
             <img src="{% static 'myapp/images/mini_logo_blekitni_stoczek.png' %}">
         </li>
-        <li>
+        <li class="match">
             <img src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}">
-            <span class="full-name">Jutrzenka Cegłów</span>
-            <span class="short-name">JUT</span>
-            <span class="result">0:0 </span>
-            <span class="short-name">BŁĘ</span>
-            <span class="full-name">Błękitni Stoczek</span>
-            <img src="{% static 'myapp/images/mini_logo_blekitni_stoczek.png' %}">
-        </li>
-        <li>
-            <img src="{% static 'myapp/images/mini_logo_jutrzenka_ceglow.png' %}">
-            <span class="full-name">Jutrzenka Cegłów</span>
-            <span class="short-name">JUT</span>
-            <span class="result">0:0 </span>
-            <span class="short-name">BŁĘ</span>
-            <span class="full-name">Błękitni Stoczek</span>
+            <span class="match__team match__team--full-name">Jutrzenka Cegłów</span>
+            <span class="match__team match__team--short-name">JUT</span>
+            <span class="match__result">0:0 </span>
+            <span class="match__team match__team--short-name">BŁĘ</span>
+            <span class="match__team match__team--full-name">Błękitni Stoczek</span>
             <img src="{% static 'myapp/images/mini_logo_blekitni_stoczek.png' %}">
         </li>
     </ul>

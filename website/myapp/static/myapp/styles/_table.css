@@ -7,7 +7,7 @@ abbr {
 
 /* SKRÓCONA NAZWA (na mobile) */
 
-.meta__short {
+.club__short {
     display: none;
 }
 
@@ -26,23 +26,23 @@ abbr {
 
 /* NAGŁÓWEK TABELI */
 
-th {
+.content-table th {
     padding: 20px 10px;
 }
 
-.club {
+.content-table .club {
     text-align: left;
 }
 
 /* KOMÓRKI TABELI (treść) */
 
-td {
+.content-table td {
     text-align: center;
     padding: 10px 0;
     border-bottom: 1px solid rgba(255, 255, 255, .3);
 }
 
-td:first-child:not(:last-child) {
+.content-table td:first-child:not(:last-child) {
     padding-left: 5px;
     /* żeby kolorki dla awansu/spadku nie wychodziły poza krawędź */
 }
@@ -78,22 +78,22 @@ td:first-child:not(:last-child) {
 
 /* KOLUMNA Z NAZWĄ DRUŻYNY */
 
-.meta {
+.club {
     text-align: left;
 }
 
-.meta__name {
+.club__name {
     font-weight: bold;
 }
 
-.meta__img {
+.club__img {
     margin-left: 15px;
 }
 
-.meta__img>img,
+.club__img>img,
 .next-match__img>img,
-.meta__name,
-.meta__short {
+.club__name,
+.club__short {
     vertical-align: middle;
 }
 
@@ -147,21 +147,21 @@ td:first-child:not(:last-child) {
     border-radius: 10px;
 }
 
-.win:hover .tooltip .result {
+.win:hover .tooltip__result {
     background-color: white;
     color: black;
     padding: 3px 5px;
     border-radius: 5px;
 }
 
-.win:hover .tooltip img,
-.win:hover .tooltip span {
+
+.win:hover .tooltip__img>img {
     vertical-align: middle;
 }
 
 /* STOPKA TABELI */
 
-.foot {
+.content-table .foot {
     padding: 20px 10px;
     text-align: left;
     border-bottom: none;
@@ -175,7 +175,7 @@ td:first-child:not(:last-child) {
     margin-right: 20px;
 }
 
-.color {
+.legend__color {
     display: inline-block;
     height: 30px;
     width: 30px;
@@ -183,15 +183,15 @@ td:first-child:not(:last-child) {
     vertical-align: middle;
 }
 
-.color--promotion {
+.legend__color--promotion {
     background-color: var(--promotion);
 }
 
-.color--relegation {
+.legend__color--relegation {
     background-color: var(--relegation);
 }
 
-.text {
+.legend__text {
     vertical-align: middle;
 }
 
@@ -209,15 +209,15 @@ td:first-child:not(:last-child) {
 
     /* KOLUMNA Z NAZWĄ DRUŻYNY */
 
-    .meta {
+    .club {
         width: 30%;
     }
 
-    .meta__name {
+    .club__name {
         display: none;
     }
 
-    .meta__short {
+    .club__short {
         display: inline;
         font-weight: bold;
     }
@@ -234,7 +234,7 @@ td:first-child:not(:last-child) {
 
     /* STOPKA */
 
-    .color {
+    .legend__color {
         height: 25px;
         width: 25px;
     }
@@ -258,13 +258,17 @@ td:first-child:not(:last-child) {
 
     /* KOLUMNA Z NAZWĄ DRUŻYNY */
 
-    .meta__img {
-        margin-left: 5px;
+    .club__img {
+        margin-left: 10px;
+    }
+
+    .club__img>img {
+        max-width: 33%;
     }
 
     /* STOPKA */
 
-    .color {
+    .legend__color {
         height: 20px;
         width: 20px;
         margin-right: 0;

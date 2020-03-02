@@ -3,12 +3,12 @@
 {% block content %}
 <h1 class="content-title">Statystyki</h1>
 
-<section class="stats-content">
-    <table class="goals-table">
+<section class="content-stats">
+    <table class="content-stats__goals">
         <thead>
             <tr>
                 <th>STRZELEC</th>
-                <th><img src="{% static 'myapp/images/goal.png' %}"></th>
+                <th><span><img src="{% static 'myapp/images/goal.png' %}"></span></th>
             </tr>
         </thead>
         <tbody>
@@ -35,11 +35,11 @@
         </tbody>
     </table>
 
-    <table class="assists-table">
+    <table class="content-stats__assists">
         <thead>
             <tr>
                 <th>ASYSTENT</th>
-                <th><img src="{% static 'myapp/images/assist.png' %}"></th>
+                <th><span><img src="{% static 'myapp/images/assist.png' %}"></span></th>
             </tr>
         </thead>
         <tbody>
@@ -66,14 +66,14 @@
         </tbody>
     </table>
 
-    <table class="goals-assists">
+    <table class="content-stats__total">
         <thead>
             <tr>
                 <th>KANADYJCZYK</th>
                 <th>
-                    <img src="{% static 'myapp/images/goal.png' %}">
-                    <img src="{% static 'myapp/images/plus.png' %}" class="plus">
-                    <img src="{% static 'myapp/images/assist.png' %}">
+                    <span><img src="{% static 'myapp/images/goal.png' %}"></span>
+                    <span><img src="{% static 'myapp/images/plus.png' %}" class="plus"></span>
+                    <span><img src="{% static 'myapp/images/assist.png' %}"></span>
                 </th>
             </tr>
         </thead>
