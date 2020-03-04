@@ -93,11 +93,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
+    // STATS site
     // select round
 
-    const select = document.querySelector('.round-select');
+    const select = document.querySelector('.content-select');
 
-    select.addEventListener('change', (e) => {
-        document.querySelector('input[type="hidden"]').value = e.target.value;
-    });
+    if (select) {
+        select.addEventListener('change', (e) => {
+            document.querySelector('input[type="hidden"]').value = e.target.value;
+        });
+    }
 });

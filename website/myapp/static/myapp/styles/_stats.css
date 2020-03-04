@@ -41,11 +41,16 @@
     margin: 0 20px
 }
 
-.plus {
+.content-stats img {
+    width: 16px;
+    height: 16px;
+    filter: invert(100%);
+}
+
+.content-stats .plus {
     width: 12px;
     height: 12px;
     margin-bottom: 2px;
-    filter: invert(100%);
 }
 
 @media screen and (max-width: 1050px) {

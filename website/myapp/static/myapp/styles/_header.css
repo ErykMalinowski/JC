@@ -29,6 +29,11 @@
     font-family: 'Aldrich', sans-serif;
     font-size: 6rem;
     padding-top: 10px;
+    transition: opacity .5s;
+}
+
+.page-logo:hover {
+    opacity: .6;
 }
 
 .page-navigation__items {
@@ -37,10 +42,33 @@
 
 .page-navigation__link {
     display: block;
+    position: relative;
     font-size: 1.6rem;
     line-height: 4.8rem;
     padding: 0 20px;
     letter-spacing: 2px;
+}
+
+.page-navigation__link::before,
+.page-navigation__link::after {
+    transition: width .5s;
+}
+
+.page-navigation__link::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: white;
+    height: 1px;
+}
+
+.page-navigation__link:hover::after {
+    width: 100%;
 }
 
 /* HAMBURGER */
@@ -55,7 +83,7 @@
 
 @media screen and (max-width: 750px) {
     .page-navigation {
-        height: 100vh;
+        height: 50vh;
         width: 300px;
         margin-top: 189px;
         /* margin-top of header + height of header */
