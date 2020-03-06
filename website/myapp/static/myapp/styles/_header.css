@@ -84,14 +84,13 @@
 @media screen and (max-width: 750px) {
     .page-header {
         background-color: rgba(0, 0, 0, 1);
-        margin-top: 0;
     }
 
     .page-navigation {
         height: 100vh;
         width: 300px;
-        margin-top: 89px;
-        /* height of header */
+        margin-top: 189px;
+        /* margin-top of heaeder + height of header */
         background-color: black;
         position: absolute;
         top: 0;
