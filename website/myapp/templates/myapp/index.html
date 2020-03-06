@@ -44,6 +44,7 @@
     </header>
     <main class="page-content">
         <div class="wrapper content-wrapper">
+            {% block content %}
             <section class="swiper-container">
                 <ul class="swiper-wrapper">
                     <li class="swiper-slide">
@@ -134,10 +135,8 @@
                 <!-- Swiper Navigation -->
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
-
             </section>
 
-            {% block content %}
             <h1 class="content-title">Aktualności</h1>
             <article class="content-article">
                 <h2 class="content-article__header">Jutrzenka&nbsp;Cegłów - Watra&nbsp;Mrozy 3:0&nbsp;(2:0)</h2>
