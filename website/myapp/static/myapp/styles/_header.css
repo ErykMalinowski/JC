@@ -36,6 +36,11 @@
     opacity: .6;
 }
 
+.page-logo:focus {
+    outline: 0;
+    border: 1px solid white;
+}
+
 .page-navigation__items {
     display: flex;
 }

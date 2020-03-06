@@ -29,11 +29,6 @@ a {
     color: white;
 }
 
-a:focus {
-    outline: 0;
-    border: 1px solid white;
-}
-
 table {
     border-spacing: 0;
 }
