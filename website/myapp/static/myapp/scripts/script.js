@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // slider with results
 
     const mySwiper = new Swiper('.swiper-container', {
-        slidesPerView: 1,
+        slidesPerView: 2,
         loop: true,
         navigation: {
             nextEl: '.swiper-button-next',
@@ -66,27 +66,23 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         breakpoints: {
-            400: {
-                slidesPerView: 2,
-                loop: true,
-            },
-            550: {
+            450: {
                 slidesPerView: 3,
                 loop: true,
             },
-            650: {
+            600: {
                 slidesPerView: 4,
                 loop: true,
             },
-            800: {
+            700: {
                 slidesPerView: 5,
                 loop: true,
             },
-            950: {
+            800: {
                 slidesPerView: 6,
                 loop: true,
             },
-            1000: {
+            901: {
                 slidesPerView: 7,
                 loop: false,
             },

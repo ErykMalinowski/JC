@@ -39,7 +39,8 @@
 
 .swiper-button-prev:focus,
 .swiper-button-next:focus {
-    outline: none;
+    outline: 0;
+    border: 1px solid white;
 }
 
 /* TYTUŁ STRONY */
@@ -89,7 +90,7 @@
 ####### MEDIA QUERIES ########
 ########################### */
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
 
     /* SEKCJA Z WYNIKAMI OSTATNIEJ KOLEJKI */
     /* SLIDER */
@@ -100,12 +101,12 @@
         color: white;
     }
 
-    .swiper-button-prev:after {
-        margin-right: 30px;
+    .swiper-button-prev {
+        left: -7px;
     }
 
-    .swiper-button-next:after {
-        margin-left: 30px;
+    .swiper-button-next {
+        right: -7px;
     }
 
     .swiper-button-prev:after,

@@ -49,6 +49,12 @@
     letter-spacing: 2px;
 }
 
+.page-navigation__link:focus {
+    outline: 0;
+    background-color: white;
+    color: black;
+}
+
 .page-navigation__link::before,
 .page-navigation__link::after {
     transition: width .5s;
@@ -188,7 +194,11 @@
         transform: translateY(-10px) rotate(-45deg);
     }
 
-    .hamburger:focus,
+    .hamburger:focus {
+        outline: 0;
+        border: 1px solid white;
+    }
+
     .hamburger__box:focus {
         outline: none;
     }

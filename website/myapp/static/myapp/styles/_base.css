@@ -30,9 +30,8 @@ a {
 }
 
 a:focus {
-    outline: none;
-    background-color: white;
-    color: black;
+    outline: 0;
+    border: 1px solid white;
 }
 
 table {
