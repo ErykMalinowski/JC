@@ -120,8 +120,13 @@
         text-align: center;
     }
 
+    .page-navigation__item:last-child .page-navigation__link {
+        border-bottom: 1px groove white;
+    }
+
     .page-navigation__link {
         padding: 10px 0;
+        border-top: 1px groove white;
     }
 
     /* HAMBURGER */
