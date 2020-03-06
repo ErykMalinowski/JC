@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 slidesPerView: 5,
                 loop: true,
             },
-            800: {
+            850: {
                 slidesPerView: 6,
                 loop: true,
             },

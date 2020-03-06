@@ -77,7 +77,7 @@
     width: 100%;
 }
 
-/* HAMBURGER */
+/* hamburger */
 
 .hamburger {
     display: none;
@@ -135,7 +135,7 @@
         border-top: 1px groove white;
     }
 
-    /* HAMBURGER */
+    /* hamburger */
 
     .hamburger {
         display: inline-block;

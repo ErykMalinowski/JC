@@ -1,17 +1,17 @@
-/* PODSTAWOWE STYLE */
+/* basic styles */
 
 abbr {
     text-decoration: none;
     cursor: help;
 }
 
-/* SKRÓCONA NAZWA (na mobile) */
+/* short team name (for mobile) */
 
 .club__short {
     display: none;
 }
 
-/* STYLE DLA TABELI */
+/* table styles */
 
 .content-table {
     --win: #44AC45;
@@ -24,7 +24,7 @@ abbr {
     font-size: 1.8rem;
 }
 
-/* NAGŁÓWEK TABELI */
+/* table headline */
 
 .content-table th {
     padding: 20px 10px;
@@ -38,7 +38,7 @@ abbr {
     text-align: left;
 }
 
-/* KOMÓRKI TABELI (treść) */
+/* table content */
 
 .content-table td {
     text-align: center;
@@ -48,16 +48,16 @@ abbr {
 
 .content-table td:first-child:not(:last-child) {
     padding-left: 5px;
-    /* żeby kolorki dla awansu/spadku nie wychodziły poza krawędź */
+    /* in order to control colors of promotion/relegation */
 }
 
-/* KLASA ACTIVE - tylko dla naszej drużyny */
+/* only for MY team */
 
 .active {
     background-color: rgba(0, 0, 0, .6);
 }
 
-/* KOLUMNA Z POZYCJĄ */
+/* column with position */
 
 .promotion,
 .relegation {
@@ -80,7 +80,7 @@ abbr {
     transform: skewX(20deg);
 }
 
-/* KOLUMNA Z NAZWĄ DRUŻYNY */
+/* column with team */
 
 .club {
     text-align: left;
@@ -101,13 +101,13 @@ abbr {
     vertical-align: middle;
 }
 
-/* KOLUMNA Z PUNKTAMI */
+/* column with points */
 
 .points {
     font-weight: bold;
 }
 
-/* KOLUMNA Z FORMĄ */
+/* column with form */
 
 .form>ul>li {
     display: inline-block;
@@ -133,7 +133,7 @@ abbr {
     position: relative;
 }
 
-/* HOVER NA IKONCE Z FORMĄ */
+/* hover on form icon */
 
 .tooltip {
     display: none;
@@ -163,7 +163,7 @@ abbr {
     vertical-align: middle;
 }
 
-/* STOPKA TABELI */
+/* table footer */
 
 .content-table .foot {
     padding: 20px 10px;
@@ -201,17 +201,15 @@ abbr {
 
 @media screen and (max-width: 1100px) {
 
-    /* NIE WYŚWIETLAĆ FORMY I NAST. MECZU */
-
     .form,
     .next-match {
         display: none;
     }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 800px) {
 
-    /* KOLUMNA Z NAZWĄ DRUŻYNY */
+    /* column with team */
 
     .club {
         width: 30%;
@@ -229,14 +227,12 @@ abbr {
 
 @media screen and (max-width: 500px) {
 
-    /* NIE WYŚWIETLAĆ BRAMEK I BILANSU */
-
     .balance,
     .goals {
         display: none;
     }
 
-    /* STOPKA */
+    /* table footer */
 
     .legend__color {
         height: 25px;
@@ -247,7 +243,7 @@ abbr {
 
 @media screen and (max-width: 400px) {
 
-    /* STYLE DLA TABELI */
+    /* table styles */
 
     .content-table {
         width: calc(100% + 20px);
@@ -255,14 +251,14 @@ abbr {
         margin: 0 -10px;
     }
 
-    /* KOLUMNA Z POZYCJĄ */
+    /* column with position */
 
     .promotion,
     .relegation {
         padding: 0 5px;
     }
 
-    /* STOPKA */
+    /* table footer */
 
     .legend__color {
         height: 20px;

@@ -1,4 +1,4 @@
-/* SEKCJA Z WYNIKAMI OSTATNIEJ KOLEJKI */
+/* section with last results */
 
 .team {
     display: flex;
@@ -11,9 +11,12 @@
     padding-bottom: 5px;
 }
 
-.team__img,
 .team__name {
     margin-right: 15px;
+}
+
+.team__img {
+    margin-right: 10px;
 }
 
 .team__img>img {
@@ -25,7 +28,7 @@
     font-weight: bold;
 }
 
-/* SLIDER */
+/* slider */
 
 .swiper-container {
     width: 100%;
@@ -43,14 +46,14 @@
     border: 1px solid white;
 }
 
-/* TYTUŁ STRONY */
+/* headline */
 
 .content-title {
     font-size: 4rem;
     margin-top: 50px;
 }
 
-/* ARTYKUŁ */
+/* article */
 
 .content-article {
     display: flex;
@@ -92,8 +95,8 @@
 
 @media screen and (max-width: 900px) {
 
-    /* SEKCJA Z WYNIKAMI OSTATNIEJ KOLEJKI */
-    /* SLIDER */
+    /* section with last results */
+    /* slider */
 
     .swiper-button-prev,
     .swiper-button-next {
@@ -117,13 +120,13 @@
 
 @media screen and (max-width: 800px) {
 
-    /* TYTUŁ STRONY */
+    /* headline */
 
     .content-title {
         font-size: 3.5rem;
     }
 
-    /* ARTYKUŁ */
+    /* article */
 
     .content-article__header {
         font-size: 2.75rem;
@@ -136,13 +139,13 @@
 
 @media screen and (max-width: 600px) {
 
-    /* TYTUŁ STRONY */
+    /* headline */
 
     .content-title {
         font-size: 3rem;
     }
 
-    /* ARTYKUŁ */
+    /* article */
 
     .content-article__header {
         font-size: 2.5rem;
@@ -161,7 +164,7 @@
 
 @media screen and (max-width: 450px) {
 
-    /* ARTYKUŁ */
+    /* article */
 
     .content-article__header {
         font-size: 2.25rem;
