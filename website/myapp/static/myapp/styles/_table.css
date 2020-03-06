@@ -30,6 +30,10 @@ abbr {
     padding: 20px 10px;
 }
 
+.content-table th.next-match {
+    padding: 20px 0;
+}
+
 .content-table .club {
     text-align: left;
 }
@@ -195,7 +199,7 @@ abbr {
     vertical-align: middle;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
 
     /* NIE WYŚWIETLAĆ FORMY I NAST. MECZU */
 
@@ -205,7 +209,7 @@ abbr {
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
 
     /* KOLUMNA Z NAZWĄ DRUŻYNY */
 
@@ -246,7 +250,9 @@ abbr {
     /* STYLE DLA TABELI */
 
     .content-table {
+        width: calc(100% + 20px);
         font-size: 1.4rem;
+        margin: 0 -10px;
     }
 
     /* KOLUMNA Z POZYCJĄ */
@@ -254,16 +260,6 @@ abbr {
     .promotion,
     .relegation {
         padding: 0 5px;
-    }
-
-    /* KOLUMNA Z NAZWĄ DRUŻYNY */
-
-    .club__img {
-        margin-left: 10px;
-    }
-
-    .club__img>img {
-        max-width: 33%;
     }
 
     /* STOPKA */
