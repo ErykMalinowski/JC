@@ -54,7 +54,7 @@
                             <span class="team__score">0</span>
                         </div>
                         <div class="team">
-                            <span class="team__img"><img src="{% static 'myapp/images/jutrzenka-new.png' %}"></span>
+                            <span class="team__img"><img src="{% static 'myapp/images/jutrzenka.png' %}"></span>
                             <span class="team__name">JUT</span>
                             <span class="team__score">1</span>
                         </div>
@@ -138,62 +138,22 @@
             </section>
 
             <h1 class="content-title">Aktualności</h1>
+
+            {% for article in articles %}
             <article class="content-article">
-                <h2 class="content-article__header">Jutrzenka&nbsp;Cegłów - Watra&nbsp;Mrozy 3:0&nbsp;(2:0)</h2>
-                <p class="content-article__round">1. kolejka</p>
-                <p class="content-article__info">BRAMKI:<br>Malinowski x3 (asysty Rutkowski, Branicki, Filipiec)</p>
-                <p class="content-article__squad">SKŁAD:<br>Zawadka - Sikorski, Lisiecki, Walas, Kowalczyk - Rutkowski,
-                    Wąsowski,
-                    Piątkowski, Filipiec - Malinowski, Branicki</p>
-                <p class="content-article__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Laudantium
-                    dignissimos quisquam, et
-                    exercitationem
-                    velit obcaecati assumenda iusto molestias asperiores explicabo neque, aspernatur nulla quaerat
-                    atque,
-                    nisi
-                    ad aliquid perspiciatis quia! Vitae maiores, aspernatur dolorem ratione quaerat magnam unde
-                    provident
-                    perspiciatis dolorum, modi accusantium impedit facere facilis maxime reprehenderit sapiente esse,
-                    molestias
-                    dicta. Omnis, nisi, suscipit veritatis rerum voluptas eius, iste nemo fugiat laboriosam eveniet
-                    praesentium
-                    perspiciatis sapiente dolorum itaque tenetur debitis nesciunt aperiam consequatur voluptatum
-                    deserunt
-                    recusandae cupiditate? Quasi eum possimus dolor et nihil ipsum sint deserunt. Voluptatibus
-                    repudiandae
-                    aliquam, qui dignissimos eum eligendi reiciendis ab corporis, debitis nihil, alias temporibus nulla
-                    iure
-                    blanditiis dolorum quod consectetur!</p>
+                <h2 class="content-article__header">{{article.title}}</h2>
+                <p class="content-article__round">{{article.round}}</p>
+                {% if article.goals %}
+                <p class="content-article__info">BRAMKI:<br>{{article.goals}}</p>
+                {% endif %}
+                <p class="content-article__squad">SKŁAD:<br>{{article.squad}}</p>
+                {% if article.cards %}
+                <p class="content-article__cards">KARTKI:<br>{{article.cards}}</p>
+                {% endif %}
+                <p class="content-article__description">{{article.description}}</p>
             </article>
-            <article class="content-article">
-                <h2 class="content-article__header">Jutrzenka&nbsp;Cegłów - Watra&nbsp;Mrozy 3:0&nbsp;(2:0)</h2>
-                <p class="content-article__round">1. kolejka</p>
-                <p class="content-article__info">BRAMKI:<br>Malinowski x3 (asysty Rutkowski, Branicki, Filipiec)</p>
-                <p class="content-article__squad">SKŁAD:<br>Zawadka - Sikorski, Lisiecki, Walas, Kowalczyk - Rutkowski,
-                    Wąsowski,
-                    Piątkowski, Filipiec - Malinowski, Branicki</p>
-                <p class="content-article__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Laudantium
-                    dignissimos quisquam, et
-                    exercitationem
-                    velit obcaecati assumenda iusto molestias asperiores explicabo neque, aspernatur nulla quaerat
-                    atque,
-                    nisi
-                    ad aliquid perspiciatis quia! Vitae maiores, aspernatur dolorem ratione quaerat magnam unde
-                    provident
-                    perspiciatis dolorum, modi accusantium impedit facere facilis maxime reprehenderit sapiente esse,
-                    molestias
-                    dicta. Omnis, nisi, suscipit veritatis rerum voluptas eius, iste nemo fugiat laboriosam eveniet
-                    praesentium
-                    perspiciatis sapiente dolorum itaque tenetur debitis nesciunt aperiam consequatur voluptatum
-                    deserunt
-                    recusandae cupiditate? Quasi eum possimus dolor et nihil ipsum sint deserunt. Voluptatibus
-                    repudiandae
-                    aliquam, qui dignissimos eum eligendi reiciendis ab corporis, debitis nihil, alias temporibus nulla
-                    iure
-                    blanditiis dolorum quod consectetur!</p>
-            </article>
+            {% endfor %}
+
             {% endblock %}
         </div>
     </main>

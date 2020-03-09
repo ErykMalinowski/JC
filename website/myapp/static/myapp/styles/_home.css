@@ -72,7 +72,8 @@
 
 .content-article__round,
 .content-article__info,
-.content-article__squad {
+.content-article__squad,
+.content-article__cards {
     font-size: 1.5rem;
 }
 
@@ -81,7 +82,8 @@
 }
 
 .content-article__info,
-.content-article__squad {
+.content-article__squad,
+.content-article__cards {
     margin-top: 15px;
 }
 
@@ -153,7 +155,8 @@
 
     .content-article__round,
     .content-article__info,
-    .content-article__squad {
+    .content-article__squad,
+    .content-article__cards {
         font-size: 1.4rem;
     }
 
