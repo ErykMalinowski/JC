@@ -91,6 +91,38 @@
     margin-top: 30px;
 }
 
+/* pagination */
+
+.pagination__items {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.pagination__item--active {
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.pagination__item--disabled {
+    cursor: not-allowed;
+}
+
+.pagination__link,
+.pagination__span {
+    display: block;
+    position: relative;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    padding: 10px;
+}
+
+.pagination__link:focus,
+.pagination__span:focus {
+    outline: 0;
+    background-color: white;
+    color: black;
+}
+
 /* ###########################
 ####### MEDIA QUERIES ########
 ########################### */

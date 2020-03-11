@@ -155,23 +155,38 @@
             {% endfor %}
 
             {% if is_paginated %}
-            {% if page_obj.has_previous %}
-            <a href="?page=1">Pierwsza</a>
-            <a href="?page={{ page_obj.previous_page_number }}">Poprzednia</a>
-            {% endif %}
+            <ul class="pagination__items">
+                {% if page_obj.has_previous %}
+                <li class="pagination__item"><a href="?page=1" class="pagination__link">&#8810;</a></li>
+                <li class="pagination__item"><a href="?page={{ page_obj.previous_page_number }}"
+                        class="pagination__link">&#60;</a></li>
+                {% else %}
+                <li class="pagination__item"><a href="?page=1" class="pagination__link">&#8810;</a></li>
+                <li class="pagination__item pagination__item--disabled"><span class="pagination__span">&#60;</span>
+                </li>
+                {% endif %}
 
-            {% for num in page_obj.paginator.page_range %}
-            {% if page_obj.number == num %}
-            <a href="?page={{ num }}">{{ num }}</a>
-            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-            <a href="?page={{ num }}">{{ num }}</a>
-            {% endif %}
-            {% endfor %}
+                {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                <li class="pagination__item pagination__item--active"><a href="?page={{ num }}"
+                        class="pagination__link">{{ num }}</a></li>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                <li class="pagination__item"><a href="?page={{ num }}" class="pagination__link">{{ num }}</a></li>
+                {% endif %}
+                {% endfor %}
 
-            {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">Następna</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}">Ostatnia</a>
-            {% endif %}
+                {% if page_obj.has_next %}
+                <li class="pagination__item"><a href="?page={{ page_obj.next_page_number }}"
+                        class="pagination__link">&#62;</a></li>
+                <li class="pagination__item"><a href="?page={{ page_obj.paginator.num_pages }}"
+                        class="pagination__link">&#8811;</a></li>
+                {% else %}
+                <li class="pagination__item pagination__item--disabled"><span class="pagination__span">&#62;</span>
+                </li>
+                <li class="pagination__item"><a href="?page={{ page_obj.paginator.num_pages }}"
+                        class="pagination__link">&#8811;</a></li>
+                {% endif %}
+            </ul>
             {% endif %}
 
             {% endblock %}
