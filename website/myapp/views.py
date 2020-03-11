@@ -9,6 +9,7 @@ class ArticleListView(ListView):
     template_name = "myapp/index.html"
     context_object_name = "articles"
     ordering = ["-created"]
+    paginate_by = 1
 
 
 class TableView(TemplateView):
