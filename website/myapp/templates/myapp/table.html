@@ -19,29 +19,48 @@
         </tr class="content-table">
     </thead class="content-table">
     <tbody>
+        {% for team in teams %}
+
+        {% if team.team.name == "Jutrzenka Cegłów" %}
         <tr class="active">
-            <td><span class="promotion"><span>1</span></span></td>
-            <td class="club">
-                <span class="club__img"><img src="{% static 'myapp/images/jutrzenka.png' %}"></span>
-                <span class="club__name">Jutrzenka Cegłów</span>
-                <span class="club__short">JUT</span>
+            {% else %}
+        <tr>
+            {% endif %}
+
+            <td>
+                {% if forloop.counter == 1 or forloop.counter == 2 or forloop.counter == 3 %}
+                <span class="promotion">
+                    {% else %}
+                    {% if forloop.counter == 11 or forloop.counter == 12 or forloop.counter == 13 %}
+                    <span class="relegation">
+                        {% else %}
+                        <span>
+                            {% endif %}
+                            {% endif %}
+                            <span>{{forloop.counter}}</span>
+                        </span>
             </td>
-            <td>26</td>
-            <td>20</td>
-            <td>4</td>
-            <td>2</td>
-            <td class="goals">75:25</td>
-            <td class="balance">50</td>
-            <td class="points">64</td>
+            <td class="club">
+                <span class="club__img"><img src="{{ team.team.img.url }}"></span>
+                <span class="club__name">{{ team.team.name }}</span>
+                <span class="club__short">{{ team.team.short_name }}</span>
+            </td>
+            <td>{{ team.matches }}</td>
+            <td>{{ team.wins }}</td>
+            <td>{{ team.draws }}</td>
+            <td>{{ team.losses }}</td>
+            <td class="goals">{{ team.goals_for }}:{{ team.goals_against }}</td>
+            <td class="balance">{{ team.balance }}</td>
+            <td class="points">{{ team.points }}</td>
             <td class="form">
                 <ul>
                     <li class="win">
                         <div class="tooltip">
-                            <span class="tooltip__img"><img src="{% static 'myapp/images/jutrzenka.png' %}"></span>
+                            <span class="tooltip__img"><img src="{{ team.team.img.url }}"></span>
                             <span class="tooltip__name">JUT</span>
                             <span class="tooltip__result">1:0</span>
                             <span class="tooltip__name">JUT</span>
-                            <span class="tooltip__img"><img src="{% static 'myapp/images/jutrzenka.png' %}"></span>
+                            <span class="tooltip__img"><img src="{{ team.team.img.url }}"></span>
                         </div>
                         <abbr title="Zwycięstwo">Z</abbr>
                     </li>
@@ -52,360 +71,10 @@
                 </ul>
             </td>
             <td class="next-match">
-                <span class="next-match__img"><img src="{% static 'myapp/images/jutrzenka.png' %}"></span>
+                <span class="next-match__img"><img src="{{ team.team.img.url }}"></span>
             </td>
         </tr>
-        <tr>
-            <td><span class="promotion"><span>2</span></span></td>
-            <td class="club">
-                <span class="club__img"><img src="{% static 'myapp/images/amazonka.png' %}"></span>
-                <span class="club__name">Amazonka Wiśniew</span>
-                <span class="club__short">AMA</span>
-            </td>
-            <td>26</td>
-            <td>20</td>
-            <td>4</td>
-            <td>2</td>
-            <td class="goals">75:25</td>
-            <td class="balance">50</td>
-            <td class="points">64</td>
-            <td class="form">
-                <ul>
-                    <li class="win" data-tooltip="JUT 2:0 JAS"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="draw"><abbr title="Remis">R</abbr></li>
-                    <li class="loss"><abbr title="Porażka">P</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                </ul>
-            </td>
-            <td class="next-match">
-                <span class="next-match__img"><img src="{% static 'myapp/images/amazonka.png' %}"></span>
-            </td>
-        </tr>
-        <tr>
-            <td><span class="promotion"><span>3</span></span></td>
-            <td class="club">
-                <span class="club__img"><img src="{% static 'myapp/images/blekitni.png' %}"></span>
-                <span class="club__name">Błękitni Stoczek</span>
-                <span class="club__short">BŁĘ</span>
-            </td>
-            <td>26</td>
-            <td>20</td>
-            <td>4</td>
-            <td>2</td>
-            <td class="goals">75:25</td>
-            <td class="balance">50</td>
-            <td class="points">64</td>
-            <td class="form">
-                <ul>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="draw"><abbr title="Remis">R</abbr></li>
-                    <li class="loss"><abbr title="Porażka">P</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                </ul>
-            </td>
-            <td class="next-match">
-                <span class="next-match__img"><img src="{% static 'myapp/images/blekitni.png' %}"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td class="club">
-                <span class="club__img"><img src="{% static 'myapp/images/golabek.png' %}"></span>
-                <span class="club__name">ULKS Gołąbek</span>
-                <span class="club__short">GOŁ</span>
-            </td>
-            <td>26</td>
-            <td>20</td>
-            <td>4</td>
-            <td>2</td>
-            <td class="goals">75:25</td>
-            <td class="balance">50</td>
-            <td class="points">64</td>
-            <td class="form">
-                <ul>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="draw"><abbr title="Remis">R</abbr></li>
-                    <li class="loss"><abbr title="Porażka">P</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                </ul>
-            </td>
-            <td class="next-match">
-                <span class="next-match__img"><img src="{% static 'myapp/images/golabek.png' %}"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td class="club">
-                <span class="club__img"><img src="{% static 'myapp/images/grodzisk.png' %}"></span>
-                <span class="club__name">Grodzisk Krzymosze</span>
-                <span class="club__short">GRO</span>
-            </td>
-            <td>26</td>
-            <td>20</td>
-            <td>4</td>
-            <td>2</td>
-            <td class="goals">75:25</td>
-            <td class="balance">50</td>
-            <td class="points">64</td>
-            <td class="form">
-                <ul>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="draw"><abbr title="Remis">R</abbr></li>
-                    <li class="loss"><abbr title="Porażka">P</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                </ul>
-            </td>
-            <td class="next-match">
-                <span class="next-match__img"><img src="{% static 'myapp/images/grodzisk.png' %}"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td class="club">
-                <span class="club__img"><img src="{% static 'myapp/images/korona.png' %}"></span>
-                <span class="club__name">Korona Olszyc</span>
-                <span class="club__short">KOR</span>
-            </td>
-            <td>26</td>
-            <td>20</td>
-            <td>4</td>
-            <td>2</td>
-            <td class="goals">75:25</td>
-            <td class="balance">50</td>
-            <td class="points">64</td>
-            <td class="form">
-                <ul>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="draw"><abbr title="Remis">R</abbr></li>
-                    <li class="loss"><abbr title="Porażka">P</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                </ul>
-            </td>
-            <td class="next-match">
-                <span class="next-match__img"><img src="{% static 'myapp/images/korona.png' %}"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td class="club">
-                <span class="club__img"><img src="{% static 'myapp/images/niwa.png' %}"></span>
-                <span class="club__name">Niwa Tęczki</span>
-                <span class="club__short">NIW</span>
-            </td>
-            <td>26</td>
-            <td>20</td>
-            <td>4</td>
-            <td>2</td>
-            <td class="goals">7:25</td>
-            <td class="balance">50</td>
-            <td class="points">64</td>
-            <td class="form">
-                <ul>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="draw"><abbr title="Remis">R</abbr></li>
-                    <li class="loss"><abbr title="Porażka">P</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                </ul>
-            </td>
-            <td class="next-match">
-                <span class="next-match__img"><img src="{% static 'myapp/images/niwa.png' %}"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td class="club">
-                <span class="club__img"><img src="{% static 'myapp/images/nojszewianka.png' %}"></span>
-                <span class="club__name">Nojszewianka Dobre</span>
-                <span class="club__short">NOJ</span>
-            </td>
-            <td>26</td>
-            <td>20</td>
-            <td>4</td>
-            <td>2</td>
-            <td class="goals">75:25</td>
-            <td class="balance">50</td>
-            <td class="points">64</td>
-            <td class="form">
-                <ul>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="draw"><abbr title="Remis">R</abbr></li>
-                    <li class="loss"><abbr title="Porażka">P</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                </ul>
-            </td>
-            <td class="next-match">
-                <span class="next-match__img"><img src="{% static 'myapp/images/nojszewianka.png' %}"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td class="club">
-                <span class="club__img"><img src="{% static 'myapp/images/plomien.png' %}"></span>
-                <span class="club__name">Płomień II Dębe Wielkie</span>
-                <span class="club__short">PŁO</span>
-            </td>
-            <td>26</td>
-            <td>10</td>
-            <td>10</td>
-            <td>2</td>
-            <td class="goals">15:8</td>
-            <td class="balance">5</td>
-            <td class="points">64</td>
-            <td class="form">
-                <ul>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="draw"><abbr title="Remis">R</abbr></li>
-                    <li class="loss"><abbr title="Porażka">P</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                </ul>
-            </td>
-            <td class="next-match">
-                <span class="next-match__img"><img src="{% static 'myapp/images/plomien.png' %}"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td class="club">
-                <span class="club__img"><img src="{% static 'myapp/images/podlasie.png' %}"></span>
-                <span class="club__name">Podlasie II Sokołów Podlaski</span>
-                <span class="club__short">POD</span>
-            </td>
-            <td>8</td>
-            <td>2</td>
-            <td>4</td>
-            <td>2</td>
-            <td class="goals">5:4</td>
-            <td class="balance">8</td>
-            <td class="points">64</td>
-            <td class="form">
-                <ul>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="draw"><abbr title="Remis">R</abbr></li>
-                    <li class="loss"><abbr title="Porażka">P</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                </ul>
-            </td>
-            <td class="next-match">
-                <span class="next-match__img"><img src="{% static 'myapp/images/podlasie.png' %}"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>11</td>
-            <td class="club">
-                <span class="club__img"><img src="{% static 'myapp/images/promnik.png' %}"></span>
-                <span class="club__name">Promnik Gończyce</span>
-                <span class="club__short">PRO</span>
-            </td>
-            <td>26</td>
-            <td>20</td>
-            <td>4</td>
-            <td>2</td>
-            <td class="goals">75:25</td>
-            <td class="balance">50</td>
-            <td class="points">64</td>
-            <td class="form">
-                <ul>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="draw"><abbr title="Remis">R</abbr></li>
-                    <li class="loss"><abbr title="Porażka">P</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                </ul>
-            </td>
-            <td class="next-match">
-                <span class="next-match__img"><img src="{% static 'myapp/images/promnik.png' %}"></span>
-            </td>
-        </tr>
-        <tr>
-            <td><span class="relegation"><span>12</span></span></td>
-            <td class="club">
-                <span class="club__img"><img src="{% static 'myapp/images/swit.png' %}"></span>
-                <span class="club__name">Świt Barcząca</span>
-                <span class="club__short">ŚWI</span>
-            </td>
-            <td>26</td>
-            <td>20</td>
-            <td>4</td>
-            <td>2</td>
-            <td class="goals">75:25</td>
-            <td class="balance">50</td>
-            <td class="points">64</td>
-            <td class="form">
-                <ul>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="draw"><abbr title="Remis">R</abbr></li>
-                    <li class="loss"><abbr title="Porażka">P</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                </ul>
-            </td>
-            <td class="next-match">
-                <span class="next-match__img"><img src="{% static 'myapp/images/swit.png' %}"></span>
-            </td>
-        </tr>
-        <tr>
-            <td><span class="relegation"><span>13</span></span></td>
-            <td class="club">
-                <span class="club__img"><img src="{% static 'myapp/images/verifis.png' %}"></span>
-                <span class="club__name">Verifis Wyrozęby</span>
-                <span class="club__short">VER</span>
-            </td>
-            <td>26</td>
-            <td>9</td>
-            <td>4</td>
-            <td>13</td>
-            <td class="goals">75:125</td>
-            <td class="balance">-50</td>
-            <td class="points">9</td>
-            <td class="form">
-                <ul>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="draw"><abbr title="Remis">R</abbr></li>
-                    <li class="loss"><abbr title="Porażka">P</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                </ul>
-            </td>
-            <td class="next-match">
-                <span class="next-match__img"><img src="{% static 'myapp/images/verifis.png' %}"></span>
-            </td>
-        </tr>
-        <tr>
-            <td><span class="relegation"><span>14</span></span></td>
-            <td class="club">
-                <span class="club__img"><img src="{% static 'myapp/images/jutrzenka.png' %}"></span>
-                <span class="club__name">Jutrzenka Cegłów</span>
-                <span class="club__short">JUT</span>
-            </td>
-            <td>26</td>
-            <td>20</td>
-            <td>4</td>
-            <td>2</td>
-            <td class="goals">75:25</td>
-            <td class="balance">50</td>
-            <td class="points">64</td>
-            <td class="form">
-                <ul>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="draw"><abbr title="Remis">R</abbr></li>
-                    <li class="loss"><abbr title="Porażka">P</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                </ul>
-            </td>
-            <td class="next-match">
-                <span class="next-match__img"><img src="{% static 'myapp/images/jutrzenka.png' %}"></span>
-            </td>
-        </tr>
+        {% endfor %}
     </tbody>
     <tfoot>
         <tr>

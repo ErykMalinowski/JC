@@ -29,6 +29,7 @@ class Season(models.Model):
 class Round(models.Model):
     number = models.PositiveSmallIntegerField()
     season = models.ForeignKey(Season, on_delete=models.CASCADE)
+    active = models.BooleanField(default=False)
 
     def __str__(self):
         return "{}. kolejka".format(self.number)
@@ -36,7 +37,8 @@ class Round(models.Model):
 
 class Team(models.Model):
     name = models.CharField(max_length=40)
-    img = models.FileField()
+    short_name = models.CharField(max_length=10, default="DEF")
+    img = models.FileField(upload_to='team_imgs')
     active = models.BooleanField(default=True)
 
     def __str__(self):
@@ -53,12 +55,44 @@ class Match(models.Model):
     round = models.ForeignKey(Round, on_delete=models.CASCADE)
 
     def __str__(self):
-        if self.score_home and self.score_away:
+        if self.score_home is not None and self.score_away is not None:
             return "{}-{} {}:{}".format(self.team_home.name, self.team_away.name, self.score_home, self.score_away)
         else:
             return "{}-{} -:-".format(self.team_home.name, self.team_away.name)
 
-    # + logika
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        if self.score_home is not None and self.score_away is not None:
+            ts_home = self.team_home.teamseason_set.filter(
+                season__active=True).first()
+            ts_away = self.team_away.teamseason_set.filter(
+                season__active=True).first()
+
+            ts_home.matches = ts_home.matches + 1
+            ts_away.matches = ts_away.matches + 1
+            ts_home.goals_for += self.score_home
+            ts_away.goals_for += self.score_away
+            ts_home.goals_against += self.score_away
+            ts_away.goals_against += self.score_home
+
+            if self.score_home > self.score_away:
+                ts_home.wins += 1
+                ts_away.losses += 1
+                ts_home.points += 3
+
+            if self.score_home < self.score_away:
+                ts_home.losses += 1
+                ts_away.wins += 1
+                ts_away.points += 3
+
+            if self.score_home == self.score_away:
+                ts_home.draws += 1
+                ts_away.draws += 1
+                ts_home.points += 1
+                ts_away.points += 1
+
+            ts_home.save()
+            ts_away.save()
 
 
 class Player(models.Model):
@@ -83,6 +117,10 @@ class TeamSeason(models.Model):
 
     def __str__(self):
         return self.team.name
+
+    @property
+    def balance(self):
+        return self.goals_for - self.goals_against
 
 
 class PlayerSeason(models.Model):

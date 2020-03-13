@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, TemplateView
 
-from .models import Article
+from .models import Article, TeamSeason
 
 
 class ArticleListView(ListView):
@@ -12,8 +12,11 @@ class ArticleListView(ListView):
     paginate_by = 1
 
 
-class TableView(TemplateView):
+class TableView(ListView):
+    model = TeamSeason
     template_name = "myapp/table.html"
+    context_object_name = "teams"
+    ordering = ["-points"]
 
 
 class MatchesView(TemplateView):
