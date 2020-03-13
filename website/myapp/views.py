@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, TemplateView
 
-from .models import Article, TeamSeason
+from .models import Article, TeamSeason, Match
 
 
 class ArticleListView(ListView):
@@ -10,6 +10,13 @@ class ArticleListView(ListView):
     context_object_name = "articles"
     ordering = ["-created"]
     paginate_by = 1
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(ArticleListView, self).get_context_data(
+            *args, **kwargs)
+        context['matches'] = Match.objects.filter(round__active=True)
+
+        return context
 
 
 class TableView(ListView):

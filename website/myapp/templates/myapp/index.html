@@ -47,90 +47,20 @@
             {% block content %}
             <section class="swiper-container">
                 <ul class="swiper-wrapper">
+                    {% for match in matches %}
                     <li class="swiper-slide">
                         <div class="team">
-                            <span class="team__img"><img src="{% static 'myapp/images/jutrzenka.png' %}"></span>
-                            <span class="team__name">JUT</span>
-                            <span class="team__score">0</span>
+                            <span class="team__img"><img src="{{ match.team_home.img.url }}"></span>
+                            <span class="team__name">{{match.team_home.short_name}}</span>
+                            <span class="team__score">{{match.score_home}}</span>
                         </div>
                         <div class="team">
-                            <span class="team__img"><img src="{% static 'myapp/images/jutrzenka.png' %}"></span>
-                            <span class="team__name">JUT</span>
-                            <span class="team__score">1</span>
+                            <span class="team__img"><img src="{{ match.team_away.img.url }}"></span>
+                            <span class="team__name">{{match.team_away.short_name}}</span>
+                            <span class="team__score">{{match.score_away}}</span>
                         </div>
                     </li>
-                    <li class="swiper-slide">
-                        <div class="team">
-                            <span class="team__img"><img src="{% static 'myapp/images/amazonka.png' %}"></span>
-                            <span class="team__name">AMA</span>
-                            <span class="team__score">2</span>
-                        </div>
-                        <div class="team">
-                            <span class="team__img"><img src="{% static 'myapp/images/blekitni.png' %}"></span>
-                            <span class="team__name">BŁĘ</span>
-                            <span class="team__score">3</span>
-                        </div>
-                    </li>
-                    <li class="swiper-slide">
-                        <div class="team">
-                            <span class="team__img"><img src="{% static 'myapp/images/golabek.png' %}"></span>
-                            <span class="team__name">GOŁ</span>
-                            <span class="team__score">1</span>
-                        </div>
-                        <div class="team">
-                            <span class="team__img"><img src="{% static 'myapp/images/grodzisk.png' %}"></span>
-                            <span class="team__name">GRO</span>
-                            <span class="team__score">0</span>
-                        </div>
-                    </li>
-                    <li class="swiper-slide">
-                        <div class="team">
-                            <span class="team__img"><img src="{% static 'myapp/images/korona.png' %}"></span>
-                            <span class="team__name">KOR</span>
-                            <span class="team__score">2</span>
-                        </div>
-                        <div class="team">
-                            <span class="team__img"><img src="{% static 'myapp/images/niwa.png' %}"></span>
-                            <span class="team__name">NIW</span>
-                            <span class="team__score">0</span>
-                        </div>
-                    </li>
-                    <li class="swiper-slide">
-                        <div class="team">
-                            <span class="team__img"><img src="{% static 'myapp/images/nojszewianka.png' %}"></span>
-                            <span class="team__name">NOJ</span>
-                            <span class="team__score">3</span>
-                        </div>
-                        <div class="team">
-                            <span class="team__img"><img src="{% static 'myapp/images/plomien.png' %}"></span>
-                            <span class="team__name">PŁO</span>
-                            <span class="team__score">0</span>
-                        </div>
-                    </li>
-                    <li class="swiper-slide">
-                        <div class="team">
-                            <span class="team__img"><img src="{% static 'myapp/images/podlasie.png' %}"></span>
-                            <span class="team__name">POD</span>
-                            <span class="team__score">0</span>
-                        </div>
-                        <div class="team">
-                            <span class="team__img"><img src="{% static 'myapp/images/promnik.png' %}"></span>
-                            <span class="team__name">PRO</span>
-                            <span class="team__score">0</span>
-                        </div>
-                    </li>
-                    <li class="swiper-slide">
-                        <div class="team">
-                            <span class="team__img"><img src="{% static 'myapp/images/swit.png' %}"></span>
-                            <span class="team__name">ŚWI</span>
-                            <span class="team__score">1</span>
-                        </div>
-                        <div class="team">
-                            <span class="team__img"><img src="{% static 'myapp/images/verifis.png' %}"></span>
-                            <span class="team__name">VER</span>
-                            <span class="team__score">1</span>
-                        </div>
-                    </li>
+                    {% endfor %}
                 </ul>
                 <!-- Swiper Navigation -->
                 <div class="swiper-button-prev"></div>

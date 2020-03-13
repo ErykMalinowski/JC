@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         breakpoints: {
-            450: {
+            475: {
                 slidesPerView: 3,
                 loop: true,
             },
@@ -74,16 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 slidesPerView: 4,
                 loop: true,
             },
-            700: {
+            750: {
                 slidesPerView: 5,
                 loop: true,
             },
-            850: {
-                slidesPerView: 6,
-                loop: true,
-            },
             901: {
-                slidesPerView: 7,
+                slidesPerView: 6,
                 loop: false,
             },
         }
