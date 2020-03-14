@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, TemplateView
 
-from .models import Article, TeamSeason, Match
+from .models import Article, TeamSeason, Match, Round
 
 
 class ArticleListView(ListView):
@@ -15,6 +15,7 @@ class ArticleListView(ListView):
         context = super(ArticleListView, self).get_context_data(
             *args, **kwargs)
         context['matches'] = Match.objects.filter(round__active=True)
+        context['active'] = Round.objects.filter(active=True)[0].number
 
         return context
 
@@ -26,8 +27,18 @@ class TableView(ListView):
     ordering = ["-points"]
 
 
-class MatchesView(TemplateView):
+class MatchesView(ListView):
+    model = Match
     template_name = "myapp/matches.html"
+    context_object_name = "matches"
+    paginate_by = 6
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(MatchesView, self).get_context_data(
+            *args, **kwargs)
+        context['rounds'] = Round.objects.all()
+
+        return context
 
 
 class StatsView(TemplateView):

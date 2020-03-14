@@ -34,8 +34,8 @@
                             GŁÓWNA</a></li>
                     <li class="page-navigation__item"><a href="{% url 'table' %}" class="page-navigation__link"
                             aria-label="Przejdź do tabeli rozgrywek">TABELA</a></li>
-                    <li class="page-navigation__item"><a href="{% url 'matches' %}" class="page-navigation__link"
-                            aria-label="Przejdź do terminarza rozgrywek">MECZE</a></li>
+                    <li class="page-navigation__item"><a href="{% url 'matches'%}?page={{active}}"
+                            class="page-navigation__link" aria-label="Przejdź do terminarza rozgrywek">MECZE</a></li>
                     <li class="page-navigation__item"><a href="{% url 'stats' %}" class="page-navigation__link"
                             aria-label="Przejdź do statystyk indywidualnych">STATYSTYKI</a></li>
                 </ul>

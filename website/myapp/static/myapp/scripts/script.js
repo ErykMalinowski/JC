@@ -85,14 +85,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
-    // STATS site
+    // MATCHES site
     // select round
 
     const select = document.querySelector('.content-select');
 
     if (select) {
         select.addEventListener('change', (e) => {
-            document.querySelector('input[type="hidden"]').value = e.target.value;
+            window.location.href = e.target.value;
         });
     }
 });

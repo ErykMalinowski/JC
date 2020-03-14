@@ -3,84 +3,34 @@
 {% block content %}
 <h1 class="content-title">Terminarz rozgrywek</h1>
 
+{% if is_paginated %}
 <label class="content-label">Numer kolejki:
-    <!-- input with last round number -->
-    <input type="hidden" name="active-round" value="3">
     <select class="content-select" name="round">
         <option value="">wybierz</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
+        {% for round in rounds %}
+        <option value="?page={{round.number}}">{{round.number}}</option>
+        {% endfor %}
     </select>
 </label>
+{% endif %}
 
-<!-- generate section based on hidden input mentioned above -->
 <section class="content-round">
+    {% regroup matches by round as rounds %}
+    {% for round in rounds %}
+    <h2 class="round-header">{{round.grouper}}</h2>
     <ul class="matches">
+        {% for match in round.list %}
         <li class="match">
-            <span><img src="{% static 'myapp/images/jutrzenka.png' %}"></span>
-            <span class="match__team match__team--full-name">Jutrzenka Cegłów</span>
-            <span class="match__team match__team--short-name">JUT</span>
-            <span class="match__result">0:0 </span>
-            <span class="match__team match__team--short-name">BŁĘ</span>
-            <span class="match__team match__team--full-name">Błękitni Stoczek</span>
-            <span><img src="{% static 'myapp/images/blekitni.png' %}"></span>
+            <span><img src="{{ match.team_home.img.url }}"></span>
+            <span class="match__team match__team--full-name">{{match.team_home.name}}</span>
+            <span class="match__team match__team--short-name">{{match.team_home.short_name}}</span>
+            <span class="match__result">{{match.score_home}}:{{match.score_away}}</span>
+            <span class="match__team match__team--short-name">{{match.team_away.short_name}}</span>
+            <span class="match__team match__team--full-name">{{match.team_away.name}}</span>
+            <span><img src="{{ match.team_away.img.url }}"></span>
         </li>
-        <li class="match">
-            <img src="{% static 'myapp/images/jutrzenka.png' %}">
-            <span class="match__team match__team--full-name">Jutrzenka Cegłów</span>
-            <span class="match__team match__team--short-name">JUT</span>
-            <span class="match__result">0:0 </span>
-            <span class="match__team match__team--short-name">BŁĘ</span>
-            <span class="match__team match__team--full-name">Błękitni Stoczek</span>
-            <img src="{% static 'myapp/images/blekitni.png' %}">
-        </li>
-        <li class="match">
-            <img src="{% static 'myapp/images/jutrzenka.png' %}">
-            <span class="match__team match__team--full-name">Jutrzenka Cegłów</span>
-            <span class="match__team match__team--short-name">JUT</span>
-            <span class="match__result">0:0 </span>
-            <span class="match__team match__team--short-name">BŁĘ</span>
-            <span class="match__team match__team--full-name">Błękitni Stoczek</span>
-            <img src="{% static 'myapp/images/blekitni.png' %}">
-        </li>
-        <li class="match">
-            <img src="{% static 'myapp/images/jutrzenka.png' %}">
-            <span class="match__team match__team--full-name">Jutrzenka Cegłów</span>
-            <span class="match__team match__team--short-name">JUT</span>
-            <span class="match__result">0:0 </span>
-            <span class="match__team match__team--short-name">BŁĘ</span>
-            <span class="match__team match__team--full-name">Błękitni Stoczek</span>
-            <img src="{% static 'myapp/images/blekitni.png' %}">
-        </li>
-        <li class="match">
-            <img src="{% static 'myapp/images/jutrzenka.png' %}">
-            <span class="match__team match__team--full-name">Jutrzenka Cegłów</span>
-            <span class="match__team match__team--short-name">JUT</span>
-            <span class="match__result">0:0 </span>
-            <span class="match__team match__team--short-name">BŁĘ</span>
-            <span class="match__team match__team--full-name">Błękitni Stoczek</span>
-            <img src="{% static 'myapp/images/blekitni.png' %}">
-        </li>
-        <li class="match">
-            <img src="{% static 'myapp/images/jutrzenka.png' %}">
-            <span class="match__team match__team--full-name">Jutrzenka Cegłów</span>
-            <span class="match__team match__team--short-name">JUT</span>
-            <span class="match__result">0:0 </span>
-            <span class="match__team match__team--short-name">BŁĘ</span>
-            <span class="match__team match__team--full-name">Błękitni Stoczek</span>
-            <img src="{% static 'myapp/images/blekitni.png' %}">
-        </li>
-        <li class="match">
-            <img src="{% static 'myapp/images/jutrzenka.png' %}">
-            <span class="match__team match__team--full-name">Jutrzenka Cegłów</span>
-            <span class="match__team match__team--short-name">JUT</span>
-            <span class="match__result">0:0 </span>
-            <span class="match__team match__team--short-name">BŁĘ</span>
-            <span class="match__team match__team--full-name">Błękitni Stoczek</span>
-            <img src="{% static 'myapp/images/blekitni.png' %}">
-        </li>
+        {%endfor%}
     </ul>
+    {%endfor%}
 </section>
 {% endblock %}
