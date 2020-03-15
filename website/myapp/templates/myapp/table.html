@@ -52,7 +52,7 @@
             <td class="goals">{{ team.goals_for }}:{{ team.goals_against }}</td>
             <td class="balance">{{ team.balance }}</td>
             <td class="points">{{ team.points }}</td>
-            <!-- forma i nast. mecz do zrobienia  -->
+            <!-- forma i tooltip do zrobienia  -->
             <td class="form">
                 <ul>
                     <li class="win">
@@ -72,7 +72,17 @@
                 </ul>
             </td>
             <td class="next-match">
-                <span class="next-match__img"><img src="{{ team.team.img.url }}"></span>
+                {% if team.team.id in home_ids or team.team.id in away_ids %}
+                {% for match in next_round %}
+                {% if team.team.name == match.team_home.name %}
+                <span class="next-match__img"><img src="{{ match.team_away.img.url }}"></span>
+                {% elif team.team.name == match.team_away.name %}
+                <span class="next-match__img"><img src="{{ match.team_home.img.url }}"></span>
+                {% endif %}
+                {% endfor %}
+                {% else %}
+                <span class="next-match__img">pauza</span>
+                {% endif %}
             </td>
         </tr>
         {% endfor %}

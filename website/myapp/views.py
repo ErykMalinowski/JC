@@ -26,6 +26,18 @@ class TableView(ListView):
     context_object_name = "teams"
     ordering = ["-points"]
 
+    def get_context_data(self, *args, **kwargs):
+        context = super(TableView, self).get_context_data(
+            *args, **kwargs)
+        next = Round.objects.filter(active=True)[0].number + 1
+        context["home_ids"] = Match.objects.filter(
+            round=next).values_list('team_home__id', flat=True)
+        context["away_ids"] = Match.objects.filter(
+            round=next).values_list('team_away__id', flat=True)
+        context["next_round"] = Match.objects.filter(round=next)
+
+        return context
+
 
 class MatchesView(ListView):
     model = Match
