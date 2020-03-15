@@ -43,33 +43,51 @@
     margin-bottom: 5px;
 }
 
+.content-round .host,
+.content-round .result,
+.content-round .guest {
+    display: flex;
+    align-items: center;
+}
+
+.content-round .host {
+    width: 50%;
+    justify-content: flex-end;
+}
+
+.content-round .result {
+    justify-content: center;
+}
+
+.content-round .guest {
+    width: 50%;
+    justify-content: flex-start;
+}
+
 .content-round .match span {
     font-size: 2.5rem;
 }
 
-.content-round .match span:first-of-type {
+.content-round .match .host__img {
     margin-right: 10px;
     margin-bottom: 3px;
 }
 
-.content-round .match span:last-of-type {
+.content-round .match .guest__img {
     margin-left: 10px;
     margin-bottom: 3px;
 }
 
-.content-round .match span:first-of-type>img {
+.content-round .match img {
     vertical-align: middle;
 }
 
-.content-round .match span:last-of-type>img {
-    vertical-align: middle;
-}
-
-.content-round .match__team--short-name {
+.content-round .match .host__short-name,
+.content-round .match .guest__short-name {
     display: none;
 }
 
-.content-round .match__result {
+.content-round .match .result__details {
     background-color: rgba(0, 0, 0, .3);
     color: white;
     font-weight: bold;
@@ -78,21 +96,56 @@
     border-radius: 5px;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1100px) {
+    .content-round .match span {
+        font-size: 2.25rem;
+    }
+
+    .content-round .match .result__details {
+        margin: 0 15px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
     .content-round .round-header {
-        font-size: 2rem;
+        font-size: 2.25rem;
     }
 
     .content-round .match span {
         font-size: 2rem;
     }
 
-    .content-round .match__result {
+    .content-round .match .result__details {
         margin: 0 10px;
     }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 900px) {
+    .content-round .match span {
+        font-size: 1.75rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .content-round .round-header {
+        font-size: 2rem;
+    }
+
+    .content-round .match span {
+        font-size: 1.5rem;
+    }
+
+    .content-round .match .host__img {
+        margin-right: 8px;
+    }
+
+    .content-round .match .guest__img {
+        margin-left: 8px;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
     .content-label {
         font-size: 1.5rem;
     }
@@ -101,16 +154,22 @@
         font-size: 1.5rem;
     }
 
-    .content-round .match__team--full-name {
+    .content-round .match span {
+        font-size: 1.75rem;
+    }
+
+    .content-round .match .host__name,
+    .content-round .match .guest__name {
         display: none;
     }
 
-    .content-round .match__team--short-name {
+    .content-round .match .host__short-name,
+    .content-round .match .guest__short-name {
         display: block;
         font-weight: bold;
     }
 
-    .content-round .match__result {
+    .content-round .match .result__details {
         margin: 0 15px;
     }
 }

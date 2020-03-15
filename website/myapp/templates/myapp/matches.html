@@ -21,14 +21,25 @@
     <ul class="matches">
         {% for match in round.list %}
         <li class="match">
-            <span><img src="{{ match.team_home.img.url }}"></span>
-            <span class="match__team match__team--full-name">{{match.team_home.name}}</span>
-            <span class="match__team match__team--short-name">{{match.team_home.short_name}}</span>
-            <span class="match__result">{{match.score_home}}:{{match.score_away}}</span>
-            <span class="match__team match__team--short-name">{{match.team_away.short_name}}</span>
-            <span class="match__team match__team--full-name">{{match.team_away.name}}</span>
-            <span><img src="{{ match.team_away.img.url }}"></span>
+            <div class="host">
+                <span class="host__img"><img src="{{ match.team_home.img.url }}"></span>
+                <span class="host__name">{{match.team_home.name}}</span>
+                <span class="host__short-name">{{match.team_home.short_name}}</span>
+            </div>
+            <div class="result">
+                {% if match.score_home != None and match.score_away != None %}
+                <span class="result__details">{{match.score_home}}:{{match.score_away}}</span>
+                {% else %}
+                <span class="result__details">-:-</span>
+                {% endif %}
+            </div>
+            <div class="guest">
+                <span class="guest__name">{{match.team_away.name}}</span>
+                <span class="guest__short-name">{{match.team_away.short_name}}</span>
+                <span class="guest__img"><img src="{{ match.team_away.img.url }}"></span>
+            </div>
         </li>
+
         {%endfor%}
     </ul>
     {%endfor%}
