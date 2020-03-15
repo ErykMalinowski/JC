@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, TemplateView
 
-from .models import Article, TeamSeason, Match, Round
+from .models import Article, TeamSeason, Match, Round, PlayerSeason
 
 
 class ArticleListView(ListView):
@@ -41,5 +41,15 @@ class MatchesView(ListView):
         return context
 
 
-class StatsView(TemplateView):
+class StatsView(ListView):
+    model = PlayerSeason
     template_name = "myapp/stats.html"
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(StatsView, self).get_context_data(
+            *args, **kwargs)
+        context['scorers'] = PlayerSeason.objects.order_by('-goals')[:5]
+        context['assistants'] = PlayerSeason.objects.order_by('-assists')[:5]
+        context['total'] = PlayerSeason.objects.order_by('-total')[:5]
+
+        return context

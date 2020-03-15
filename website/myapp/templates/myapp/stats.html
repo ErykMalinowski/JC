@@ -12,26 +12,12 @@
             </tr>
         </thead>
         <tbody>
+            {% for scorer in scorers %}
             <tr>
-                <td>Eryk Malinowski</td>
-                <td>15</td>
+                <td>{{scorer.player.personal_details}}</td>
+                <td>{{scorer.goals}}</td>
             </tr>
-            <tr>
-                <td>Michał Rutkowski</td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td>Dominik Jarzębski</td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td>Mariusz Rutkowski</td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td>Krzysztof Wąsowski</td>
-                <td>15</td>
-            </tr>
+            {% endfor %}
         </tbody>
     </table>
 
@@ -43,26 +29,12 @@
             </tr>
         </thead>
         <tbody>
+            {% for assistant in assistants %}
             <tr>
-                <td>Eryk Malinowski</td>
-                <td>15</td>
+                <td>{{assistant.player.personal_details}}</td>
+                <td>{{assistant.assists}}</td>
             </tr>
-            <tr>
-                <td>Eryk Malinowski</td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td>Eryk Malinowski</td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td>Eryk Malinowski</td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td>Eryk Malinowski</td>
-                <td>15</td>
-            </tr>
+            {% endfor %}
         </tbody>
     </table>
 
@@ -79,26 +51,12 @@
             </tr>
         </thead>
         <tbody>
+            {% for player in total %}
             <tr>
-                <td>Eryk Malinowski</td>
-                <td>30</td>
+                <td>{{player.player.personal_details}}</td>
+                <td>{{player.total}}</td>
             </tr>
-            <tr>
-                <td>Eryk Malinowski</td>
-                <td>30</td>
-            </tr>
-            <tr>
-                <td>Eryk Malinowski</td>
-                <td>30</td>
-            </tr>
-            <tr>
-                <td>Krzysztof Wąsowski</td>
-                <td>30</td>
-            </tr>
-            <tr>
-                <td>Eryk Malinowski</td>
-                <td>30</td>
-            </tr>
+            {% endfor %}
         </tbody>
     </table>
 </section>

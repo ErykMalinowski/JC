@@ -126,6 +126,7 @@ class TeamSeason(models.Model):
 class PlayerSeason(models.Model):
     goals = models.PositiveSmallIntegerField(null=True)
     assists = models.PositiveSmallIntegerField(null=True)
+    total = models.PositiveSmallIntegerField(null=True)
     yellow_cards = models.PositiveSmallIntegerField(null=True)
     red_cards = models.PositiveSmallIntegerField(null=True)
     conceded = models.PositiveSmallIntegerField(null=True)
@@ -134,3 +135,7 @@ class PlayerSeason(models.Model):
 
     def __str__(self):
         return self.player.personal_details
+
+    def save(self, *args, **kwargs):
+        self.total = self.goals + self.assists
+        super().save(*args, **kwargs)
