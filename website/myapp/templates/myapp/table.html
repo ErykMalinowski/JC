@@ -52,28 +52,121 @@
             <td class="goals">{{ team.goals_for }}:{{ team.goals_against }}</td>
             <td class="balance">{{ team.balance }}</td>
             <td class="points">{{ team.points }}</td>
-            <!-- forma i tooltip do zrobienia  -->
             <td class="form">
                 <ul>
+                    {% for match in last_matches %}
+                    {% if match.team_home.name == team.team.name %}
+                    {% if match.score_home > match.score_away %}
                     <li class="win">
                         <div class="tooltip">
-                            <span class="tooltip__img"><img src="{{ team.team.img.url }}"></span>
-                            <span class="tooltip__name">JUT</span>
-                            <span class="tooltip__result">1:0</span>
-                            <span class="tooltip__name">JUT</span>
-                            <span class="tooltip__img"><img src="{{ team.team.img.url }}"></span>
+                            <span class="tooltip__img"><img src="{{ match.team_home.img.url }}"></span>
+                            <span class="tooltip__name">{{match.team_home.short_name}}</span>
+                            <span class="tooltip__result">{{match.score_home}}:{{match.score_away}}</span>
+                            <span class="tooltip__name">{{match.team_away.short_name}}</span>
+                            <span class="tooltip__img"><img src="{{ match.team_away.img.url }}"></span>
                         </div>
                         <abbr title="Zwycięstwo">Z</abbr>
                     </li>
-                    <li class="draw"><abbr title="Remis">R</abbr></li>
-                    <li class="loss"><abbr title="Porażka">P</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
-                    <li class="win"><abbr title="Zwycięstwo">Z</abbr></li>
+                    {% elif match.score_home < match.score_away %}
+                    <li class="loss">
+                        <div class="tooltip">
+                            <span class="tooltip__img"><img src="{{ match.team_home.img.url }}"></span>
+                            <span class="tooltip__name">{{match.team_home.short_name}}</span>
+                            <span class="tooltip__result">{{match.score_home}}:{{match.score_away}}</span>
+                            <span class="tooltip__name">{{match.team_away.short_name}}</span>
+                            <span class="tooltip__img"><img src="{{ match.team_away.img.url }}"></span>
+                        </div>
+                        <abbr title="Porażka">P</abbr>
+                    </li>
+                    {% else %}
+                    <li class="draw">
+                        <div class="tooltip">
+                            <span class="tooltip__img"><img src="{{ match.team_home.img.url }}"></span>
+                            <span class="tooltip__name">{{match.team_home.short_name}}</span>
+                            <span class="tooltip__result">{{match.score_home}}:{{match.score_away}}</span>
+                            <span class="tooltip__name">{{match.team_away.short_name}}</span>
+                            <span class="tooltip__img"><img src="{{ match.team_away.img.url }}"></span>
+                        </div>
+                        <abbr title="Remis">R</abbr>
+                    </li>
+                    {% endif %}
+                    {% endif %}
+
+                    {% if match.team_away.name == team.team.name %}
+                    {% if match.score_home > match.score_away %}
+                    <li class="loss">
+                        <div class="tooltip">
+                            <span class="tooltip__img"><img src="{{ match.team_home.img.url }}"></span>
+                            <span class="tooltip__name">{{match.team_home.short_name}}</span>
+                            <span class="tooltip__result">{{match.score_home}}:{{match.score_away}}</span>
+                            <span class="tooltip__name">{{match.team_away.short_name}}</span>
+                            <span class="tooltip__img"><img src="{{ match.team_away.img.url }}"></span>
+                        </div>
+                        <abbr title="Porażka">P</abbr>
+                    </li>
+                    {% elif match.score_home < match.score_away %}
+                    <li class="win">
+                        <div class="tooltip">
+                            <span class="tooltip__img"><img src="{{ match.team_home.img.url }}"></span>
+                            <span class="tooltip__name">{{match.team_home.short_name}}</span>
+                            <span class="tooltip__result">{{match.score_home}}:{{match.score_away}}</span>
+                            <span class="tooltip__name">{{match.team_away.short_name}}</span>
+                            <span class="tooltip__img"><img src="{{ match.team_away.img.url }}"></span>
+                        </div>
+                        <abbr title="Zwycięstwo">Z</abbr>
+                    </li>
+                    {% else %}
+                    <li class="draw">
+                        <div class="tooltip">
+                            <span class="tooltip__img"><img src="{{ match.team_home.img.url }}"></span>
+                            <span class="tooltip__name">{{match.team_home.short_name}}</span>
+                            <span class="tooltip__result">{{match.score_home}}:{{match.score_away}}</span>
+                            <span class="tooltip__name">{{match.team_away.short_name}}</span>
+                            <span class="tooltip__img"><img src="{{ match.team_away.img.url }}"></span>
+                        </div>
+                        <abbr title="Remis">R</abbr>
+                    </li>
+                    {% endif %}
+                    {% endif %}
+
+                    {% if forloop.counter|divisibleby:"6" and forloop.counter == 6 %}
+                    {% if team.team.id not in last_matches_per_round.5 %}
+                    <li class="pause">
+                        <abbr title="Pauza">&#8722;</abbr>
+                    </li>
+                    {%endif%}
+                    {% elif forloop.counter|divisibleby:"12" and forloop.counter == 12 %}
+                    {% if team.team.id not in last_matches_per_round.11 %}
+                    <li class="pause">
+                        <abbr title="Pauza">&#8722;</abbr>
+                    </li>
+                    {%endif%}
+                    {% elif forloop.counter|divisibleby:"18" and forloop.counter == 18 %}
+                    {% if team.team.id not in last_matches_per_round.17 %}
+                    <li class="pause">
+                        <abbr title="Pauza">&#8722;</abbr>
+                    </li>
+                    {%endif%}
+                    {% elif forloop.counter|divisibleby:"24" and forloop.counter == 24 %}
+                    {% if team.team.id not in last_matches_per_round.23 %}
+                    <li class="pause">
+                        <abbr title="Pauza">&#8722;</abbr>
+                    </li>
+                    {%endif%}
+                    {% elif forloop.counter|divisibleby:"30" and forloop.counter == 30 %}
+                    {% if team.team.id not in last_matches_per_round.29 %}
+                    <li class="pause">
+                        <abbr title="Pauza">&#8722;</abbr>
+                    </li>
+                    {%endif%}
+                    {%endif%}
+
+                    {% endfor %}
                 </ul>
             </td>
             <td class="next-match">
-                {% if team.team.id in home_ids or team.team.id in away_ids %}
-                {% for match in next_round %}
+                {% if team.team.id in next_round_list %}
+                {% for match in next_round_matches %}
                 {% if team.team.name == match.team_home.name %}
                 <span class="next-match__img"><img src="{{ match.team_away.img.url }}"></span>
                 {% elif team.team.name == match.team_away.name %}
@@ -81,7 +174,11 @@
                 {% endif %}
                 {% endfor %}
                 {% else %}
+                {% if next_round_list %}
                 <span class="next-match__img">pauza</span>
+                {% else %}
+                <span class="next-match__img">brak</span>
+                {% endif %}
                 {% endif %}
             </td>
         </tr>

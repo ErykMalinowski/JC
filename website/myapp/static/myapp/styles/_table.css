@@ -17,6 +17,7 @@ abbr {
     --win: #44AC45;
     --draw: #FFB22F;
     --loss: #EB3F30;
+    --pause: gray;
     --promotion: #1B7700;
     --relegation: #BD0000;
     width: 100%;
@@ -133,13 +134,19 @@ abbr {
     position: relative;
 }
 
+.pause {
+    background-color: var(--pause);
+}
+
 /* hover on form icon */
 
 .tooltip {
     display: none;
 }
 
-.win:hover .tooltip {
+.win:hover .tooltip,
+.draw:hover .tooltip,
+.loss:hover .tooltip {
     display: block;
     position: absolute;
     top: -200%;
@@ -151,7 +158,9 @@ abbr {
     border-radius: 10px;
 }
 
-.win:hover .tooltip__result {
+.win:hover .tooltip__result,
+.draw:hover .tooltip__result,
+.loss:hover .tooltip__result {
     background-color: white;
     color: black;
     padding: 3px 5px;
@@ -159,8 +168,11 @@ abbr {
 }
 
 
-.win:hover .tooltip__img>img {
+.win:hover .tooltip__img>img,
+.draw:hover .tooltip__img>img,
+.loss:hover .tooltip__img>img {
     vertical-align: middle;
+    margin-bottom: 3px;
 }
 
 /* table footer */
