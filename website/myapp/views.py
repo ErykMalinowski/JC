@@ -31,7 +31,7 @@ class TableView(ListView):
         context = super(TableView, self).get_context_data(
             *args, **kwargs)
 
-        active = Round.objects.get(active=True).number
+        active = context['active'] = Round.objects.get(active=True).number
         next = active + 1
 
         # next match
@@ -71,6 +71,7 @@ class MatchesView(ListView):
         context = super(MatchesView, self).get_context_data(
             *args, **kwargs)
         context['rounds'] = Round.objects.all()
+        context['active'] = Round.objects.get(active=True).number
 
         return context
 
@@ -82,6 +83,7 @@ class StatsView(ListView):
     def get_context_data(self, *args, **kwargs):
         context = super(StatsView, self).get_context_data(
             *args, **kwargs)
+        context['active'] = Round.objects.get(active=True).number
         context['scorers'] = PlayerSeason.objects.order_by('-goals')[:5]
         context['assistants'] = PlayerSeason.objects.order_by('-assists')[:5]
         context['total'] = PlayerSeason.objects.order_by('-total')[:5]
