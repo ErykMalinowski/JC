@@ -138,6 +138,11 @@ abbr {
     background-color: var(--pause);
 }
 
+.postponed {
+    background-color: var(--pause);
+    position: relative;
+}
+
 /* hover on form icon */
 
 .tooltip {
@@ -146,7 +151,8 @@ abbr {
 
 .win:hover .tooltip,
 .draw:hover .tooltip,
-.loss:hover .tooltip {
+.loss:hover .tooltip,
+.postponed:hover .tooltip {
     display: block;
     position: absolute;
     top: -200%;
@@ -160,7 +166,8 @@ abbr {
 
 .win:hover .tooltip__result,
 .draw:hover .tooltip__result,
-.loss:hover .tooltip__result {
+.loss:hover .tooltip__result,
+.postponed:hover .tooltip__result {
     background-color: white;
     color: black;
     padding: 3px 5px;
@@ -170,7 +177,8 @@ abbr {
 
 .win:hover .tooltip__img>img,
 .draw:hover .tooltip__img>img,
-.loss:hover .tooltip__img>img {
+.loss:hover .tooltip__img>img,
+.postponed:hover .tooltip__img>img {
     vertical-align: middle;
     margin-bottom: 3px;
 }

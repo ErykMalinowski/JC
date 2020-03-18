@@ -78,7 +78,7 @@
                         </div>
                         <abbr title="Porażka">P</abbr>
                     </li>
-                    {% else %}
+                    {% elif match.score_home == match.score_away and match.score_home != None and match.score_away != None %}
                     <li class="draw">
                         <div class="tooltip">
                             <span class="tooltip__img"><img src="{{ match.team_home.img.url }}"></span>
@@ -88,6 +88,17 @@
                             <span class="tooltip__img"><img src="{{ match.team_away.img.url }}"></span>
                         </div>
                         <abbr title="Remis">R</abbr>
+                    </li>
+                    {%else%}
+                    <li class="postponed">
+                        <div class="tooltip">
+                            <span class="tooltip__img"><img src="{{ match.team_home.img.url }}"></span>
+                            <span class="tooltip__name">{{match.team_home.short_name}}</span>
+                            <span class="tooltip__result">-:-</span>
+                            <span class="tooltip__name">{{match.team_away.short_name}}</span>
+                            <span class="tooltip__img"><img src="{{ match.team_away.img.url }}"></span>
+                        </div>
+                        <abbr title="Nierozegrany">NR</abbr>
                     </li>
                     {% endif %}
                     {% endif %}
@@ -115,7 +126,7 @@
                         </div>
                         <abbr title="Zwycięstwo">Z</abbr>
                     </li>
-                    {% else %}
+                    {% elif match.score_home == match.score_away and match.score_home != None and match.score_away != None %}
                     <li class="draw">
                         <div class="tooltip">
                             <span class="tooltip__img"><img src="{{ match.team_home.img.url }}"></span>
@@ -125,6 +136,17 @@
                             <span class="tooltip__img"><img src="{{ match.team_away.img.url }}"></span>
                         </div>
                         <abbr title="Remis">R</abbr>
+                    </li>
+                    {%else%}
+                    <li class="postponed">
+                        <div class="tooltip">
+                            <span class="tooltip__img"><img src="{{ match.team_home.img.url }}"></span>
+                            <span class="tooltip__name">{{match.team_home.short_name}}</span>
+                            <span class="tooltip__result">-:-</span>
+                            <span class="tooltip__name">{{match.team_away.short_name}}</span>
+                            <span class="tooltip__img"><img src="{{ match.team_away.img.url }}"></span>
+                        </div>
+                        <abbr title="Nierozegrany">NR</abbr>
                     </li>
                     {% endif %}
                     {% endif %}
