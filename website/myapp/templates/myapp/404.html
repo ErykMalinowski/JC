@@ -1,0 +1,15 @@
+{% extends './index.html' %}
+{% block title %}
+<title>Strona nie istnieje</title>
+{% endblock %}
+{% load static %}
+{% block content %}
+
+<section class="content-error">
+    <img src="{% static 'myapp/images/offside.svg' %}" alt="">
+    <h1 class="content-title">Strona nie istnieje</h1>
+    <p>Przepraszamy, ale wygląda na to, że nie ma strony o podanych kryteriach.</p>
+    <a href="{% url 'home' %}">WRÓĆ NA STRONĘ GŁÓWNĄ</a>
+</section>
+
+{% endblock %}

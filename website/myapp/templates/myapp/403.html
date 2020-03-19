@@ -1,0 +1,15 @@
+{% extends './index.html' %}
+{% block title %}
+<title>Dostęp zablokowany</title>
+{% endblock %}
+{% load static %}
+{% block content %}
+
+<section class="content-error">
+    <img src="{% static 'myapp/images/offside.svg' %}" alt="">
+    <h1 class="content-title">Dostęp zablokowany</h1>
+    <p>Przepraszamy, ale wygląda na to, że nie masz dostępu do strony o podanych kryteriach.</p>
+    <a href="{% url 'home' %}">WRÓĆ NA STRONĘ GŁÓWNĄ</a>
+</section>
+
+{% endblock %}

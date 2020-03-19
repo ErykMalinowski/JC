@@ -1,0 +1,14 @@
+{% extends './index.html' %}
+{% block title %}
+<title>Błąd serwera</title>
+{% endblock %}
+{% load static %}
+{% block content %}
+
+<section class="content-error">
+    <img src="{% static 'myapp/images/offside.svg' %}" alt="">
+    <h1 class="content-title">Błąd serwera</h1>
+    <p>Przepraszamy, ale wygląda na to, że mamy problemy techniczne. Spróbuj za chwilę.</p>
+</section>
+
+{% endblock %}

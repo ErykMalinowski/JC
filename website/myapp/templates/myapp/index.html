@@ -4,8 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <title>Jutrzenka Cegłów</title>
+    {% block title %}
+    <title>Jutrzenka Cegłów - oficjalna strona</title>
+    {% endblock %}
     {% load static %}
+    <link rel="icon" type="image/png" href="{% static 'myapp/images/favicon16.png' %}" sizes="16x16">
+    <link rel="icon" type="image/png" href="{% static 'myapp/images/favicon32.png' %}" sizes="32x32">
+
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'myapp/styles/style.css' %}">

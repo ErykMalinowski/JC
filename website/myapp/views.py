@@ -89,3 +89,20 @@ class StatsView(ListView):
         context['total'] = PlayerSeason.objects.order_by('-total')[:5]
 
         return context
+
+
+# ERROR views
+def handler400(request, exception):
+    return render(request, 'myapp/400.html', status=400)
+
+
+def handler403(request, exception):
+    return render(request, 'myapp/403.html', status=403)
+
+
+def handler404(request, exception):
+    return render(request, 'myapp/404.html', status=404)
+
+
+def handler500(request):
+    return render(request, 'myapp/500.html', status=500)
